@@ -2,7 +2,6 @@ import { Suspense, lazy, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Loader } from "./Loader/Loader";
 import Layout from "./Layout/Layout";
-import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 
@@ -50,7 +49,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/products" element={<Products />}></Route>
-            <Route path="/products/:productId/*" element={<ProductDetails />} />
+            {/* <Route path="/products/:productId/*" element={<ProductDetails />} /> */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>

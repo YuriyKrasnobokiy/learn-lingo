@@ -12,5 +12,5 @@ export default defineConfig({
     outDir: "./dist",
     assetsDir: "assets",
   },
-  base: "/react-vite-template/",
+  base: "/learn-lingo/",
 });
