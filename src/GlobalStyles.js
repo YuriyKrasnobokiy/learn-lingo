@@ -4,8 +4,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: "Manrope", sans-serif;
-    color: #121417;
+    font-family: "Roboto", sans-serif;
+    color: ${(p) => p.theme.colors.textColor};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${(p) => p.theme.colors.mainBgColor};
@@ -55,9 +55,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-  max-width: 1200px;
+  width: 1312px;
   margin: 0 auto;
-  padding: 20px 40px;
+  padding: 0 64px;
   }
 `;
 

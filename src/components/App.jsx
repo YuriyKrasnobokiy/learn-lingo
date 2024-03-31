@@ -6,25 +6,26 @@ import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 
 const Home = lazy(() => import("../pages/Home/Home"));
-const Products = lazy(() => import("../pages/Products/Products"));
+const Teachers = lazy(() => import("../pages/Teachers/Teachers"));
 
 export const themes = {
   light: {
     colors: {
       textColor: "#121417",
-      secondTextColor: "#8a8a89",
-      accentColor: "#0b44cd",
-      secondAccentColor: "#3470ff",
+      accentColor: "#f4c550",
+      secondAccentColor: "#ffdc86",
       mainBgColor: "white",
+      registerBtnBgColor: "#121417",
+      registerBtnColor: "#fff",
     },
   },
   dark: {
     colors: {
       textColor: "white",
-      secondTextColor: "#8a8a89",
-      accentColor: "#0b44cd",
-      secondAccentColor: "#3470ff",
-      mainBgColor: "#010101",
+      accentColor: "#f4c550",
+      secondAccentColor: "#ffdc86",
+      mainBgColor: "#121417",
+      registerBtnBgColor: "#ffdc86",
     },
   },
 };
@@ -48,7 +49,7 @@ export const App = () => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/products" element={<Products />}></Route>
+            <Route path="/teachers" element={<Teachers />}></Route>
             {/* <Route path="/products/:productId/*" element={<ProductDetails />} /> */}
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

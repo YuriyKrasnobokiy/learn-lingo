@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  width: 1200px;
-  padding: 20px 40px;
+  max-width: 1184px;
+  padding: 20px 64px;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
@@ -15,13 +15,26 @@ export const HeaderNav = styled.div`
   justify-content: center;
 `;
 
+export const LogoWrapperStyled = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const LogoTextStyled = styled.span`
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-left: 8px;
+`;
+
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
-  color: ${(props) => props.theme.colors.secondTextColor};
-  font-size: 18px;
-  font-weight: 600;
-  padding: 20px;
-  display: inline-flex;
+  color: ${(props) => props.theme.colors.textColor};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  /* display: inline-flex; */
   transition: color 0.3s linear;
   cursor: pointer;
 
@@ -34,6 +47,45 @@ export const NavLinkStyled = styled(NavLink)`
   }
 
   &:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 28px;
+  }
+`;
+
+export const AuthBtnsWrap = styled.div`
+  display: flex;
+`;
+
+export const LoginButtonStyled = styled.button`
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0;
+  padding: 14px 16px;
+  background: transparent;
+  color: ${(props) => props.theme.colors.textColor};
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.accentColor};
+  }
+`;
+
+export const LoginBtnIcon = styled.img`
+  margin-right: 8px;
+`;
+
+export const RegisterButtonStyled = styled.button`
+  border-radius: 12px;
+  padding: 14px 40px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0;
+  color: ${(props) => props.theme.colors.registerBtnColor};
+  background-color: ${(props) => props.theme.colors.registerBtnBgColor};
+  transition: background-color 0.3s linear;
+
+  &:hover {
+    background-color: ${(props) => props.theme.colors.accentColor};
   }
 `;
