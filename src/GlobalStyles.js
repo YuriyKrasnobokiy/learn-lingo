@@ -57,7 +57,6 @@ const GlobalStyles = createGlobalStyle`
   .container {
   width: 1312px;
   margin: 0 auto;
-  padding: 0 64px;
   }
 `;
 

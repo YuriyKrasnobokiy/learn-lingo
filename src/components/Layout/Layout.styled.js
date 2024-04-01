@@ -10,11 +10,6 @@ export const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-export const HeaderNav = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 export const LogoWrapperStyled = styled.div`
   display: flex;
   align-items: center;
@@ -28,13 +23,18 @@ export const LogoTextStyled = styled.span`
   margin-left: 8px;
 `;
 
+export const HeaderNav = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
+  padding: 14px 0;
   color: ${(props) => props.theme.colors.textColor};
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  /* display: inline-flex; */
   transition: color 0.3s linear;
   cursor: pointer;
 

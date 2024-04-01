@@ -1,4 +1,4 @@
-import { MaterialUISwitch } from "../Switch/Switch";
+// import { MaterialUISwitch } from "../Switch/Switch";
 import {
   AuthBtnsWrap,
   HeaderNav,
@@ -13,7 +13,8 @@ import {
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import LoginIcon from "../../assets/icons/login.svg";
 
-const Layout = ({ children, toggleTheme, currentTheme }) => {
+// const Layout = ({ children, toggleTheme, currentTheme }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <header>
@@ -26,10 +27,10 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
             <NavLinkStyled to="/">Home</NavLinkStyled>
             <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
           </HeaderNav>
-          <MaterialUISwitch
+          {/* <MaterialUISwitch
             onClick={toggleTheme}
             checked={currentTheme === "dark"}
-          />
+          /> */}
           <AuthBtnsWrap>
             <LoginButtonStyled type="button">
               <LoginBtnIcon src={LoginIcon} alt="login arrow" />
