@@ -1,4 +1,5 @@
-// import { MaterialUISwitch } from "../Switch/Switch";
+import { MdOutlineWbSunny } from "react-icons/md";
+import { MdOutlineNightsStay } from "react-icons/md";
 import {
   AuthBtnsWrap,
   HeaderNav,
@@ -9,12 +10,12 @@ import {
   LogoWrapperStyled,
   NavLinkStyled,
   RegisterButtonStyled,
+  ThemeBtn,
 } from "./Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import LoginIcon from "../../assets/icons/login.svg";
 
-// const Layout = ({ children, toggleTheme, currentTheme }) => {
-const Layout = ({ children }) => {
+const Layout = ({ children, toggleTheme, currentTheme }) => {
   return (
     <>
       <header>
@@ -27,11 +28,15 @@ const Layout = ({ children }) => {
             <NavLinkStyled to="/">Home</NavLinkStyled>
             <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
           </HeaderNav>
-          {/* <MaterialUISwitch
-            onClick={toggleTheme}
-            checked={currentTheme === "dark"}
-          /> */}
+
           <AuthBtnsWrap>
+            <ThemeBtn type="button" onClick={toggleTheme}>
+              {currentTheme === "dark" ? (
+                <MdOutlineNightsStay />
+              ) : (
+                <MdOutlineWbSunny />
+              )}
+            </ThemeBtn>
             <LoginButtonStyled type="button">
               <LoginBtnIcon src={LoginIcon} alt="login arrow" />
               Log In

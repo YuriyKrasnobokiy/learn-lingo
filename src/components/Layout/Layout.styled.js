@@ -51,8 +51,18 @@ export const NavLinkStyled = styled(NavLink)`
   }
 `;
 
+export const ThemeBtn = styled.button`
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  background-color: transparent;
+  color: ${(props) => props.theme.colors.textColor};
+`;
+
 export const AuthBtnsWrap = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const LoginButtonStyled = styled.button`

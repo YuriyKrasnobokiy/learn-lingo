@@ -31,9 +31,9 @@ export const themes = {
       thirdAccentColor: "#fbe9ba",
       mainBgColor: "#121417",
       registerBtnBgColor: "#ffdc86",
-      HomeTextBlkBGC: "#f8f8f8",
+      HomeTextBlkBGC: "#121417",
       HomeImgBlkBGC: "#fbe9ba",
-      StatsDescrColor: "rgba(18, 20, 23, 0.7)",
+      StatsDescrColor: "#f8f8f8",
     },
   },
 };
