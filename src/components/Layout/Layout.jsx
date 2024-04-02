@@ -14,8 +14,16 @@ import {
 } from "./Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import LoginIcon from "../../assets/icons/login.svg";
+import { useState } from "react";
+import { ModalRegister } from "../ModalRegister/ModalRegister";
 
-const Layout = ({ children, toggleTheme, currentTheme }) => {
+export const Layout = ({ children, toggleTheme, currentTheme }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openModal = () => {
+    setIsOpenModal((prevState) => !prevState);
+  };
+
   return (
     <>
       <header>
@@ -27,9 +35,6 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
           <HeaderNav>
             <NavLinkStyled to="/">Home</NavLinkStyled>
             <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
-          </HeaderNav>
-
-          <AuthBtnsWrap>
             <ThemeBtn type="button" onClick={toggleTheme}>
               {currentTheme === "dark" ? (
                 <MdOutlineNightsStay />
@@ -37,13 +42,17 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
                 <MdOutlineWbSunny />
               )}
             </ThemeBtn>
+          </HeaderNav>
+
+          <AuthBtnsWrap>
             <LoginButtonStyled type="button">
               <LoginBtnIcon src={LoginIcon} alt="login arrow" />
               Log In
             </LoginButtonStyled>
-            <RegisterButtonStyled type="button">
+            <RegisterButtonStyled type="button" onClick={() => openModal()}>
               Registration
             </RegisterButtonStyled>
+            {isOpenModal && <ModalRegister openModal={openModal} />}
           </AuthBtnsWrap>
         </HeaderWrapper>
       </header>
@@ -51,5 +60,3 @@ const Layout = ({ children, toggleTheme, currentTheme }) => {
     </>
   );
 };
-
-export default Layout;

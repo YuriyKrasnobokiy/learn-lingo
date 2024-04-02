@@ -1,7 +1,7 @@
 import { Suspense, lazy, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Loader } from "./Loader/Loader";
-import Layout from "./Layout/Layout";
+import { Layout } from "../components/Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
 
