@@ -1,4 +1,4 @@
-import{u as o,j as e}from"./index-B4t0_MN7.js";const s=o.div`
+import{u as o,j as e}from"./index-uTCm9iOv.js";const s=o.div`
   display: grid;
   grid-template-columns: 1fr 568px;
   gap: 24px;
