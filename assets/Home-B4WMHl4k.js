@@ -1,4 +1,4 @@
-import{u as o,j as e}from"./index-BMQ87fsf.js";const s=o.div`
+import{u as o,j as e}from"./index-B4t0_MN7.js";const s=o.div`
   display: grid;
   grid-template-columns: 1fr 568px;
   gap: 24px;
@@ -13,16 +13,17 @@ import{u as o,j as e}from"./index-BMQ87fsf.js";const s=o.div`
   letter-spacing: -0.02em;
   margin-bottom: 32px;
 `,a=o.span`
+  color: ${t=>t.theme.colors.HomeAccentText};
   border-radius: 14px;
   background-color: ${t=>t.theme.colors.thirdAccentColor};
-`,d=o.p`
+`,x=o.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375;
   letter-spacing: -0.02em;
   margin-bottom: 64px;
   width: 471px;
-`,x=o.button`
+`,d=o.button`
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55;
@@ -71,4 +72,4 @@ import{u as o,j as e}from"./index-BMQ87fsf.js";const s=o.div`
   letter-spacing: -0.02em;
   max-width: 106px;
   color: ${t=>t.theme.colors.StatsDescrColor};
-`,m="/learn-lingo/assets/smile-C_OMyEqn.svg",j=()=>e.jsxs("div",{className:"container",children:[e.jsxs(s,{children:[e.jsxs(c,{children:[e.jsxs(l,{children:["Unlock your potential with the best"," ",e.jsx(a,{children:e.jsx("i",{children:"language"})})," ","tutors"]}),e.jsx(d,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),e.jsx(x,{type:"button",children:"Get started"})]}),e.jsx(h,{children:e.jsx("img",{src:m,alt:"smilling girl"})})]}),e.jsx(g,{children:e.jsxs(p,{children:[e.jsxs(r,{children:[e.jsx(i,{children:"32,000 + "}),e.jsx(n,{children:"Experienced tutors"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"300,000 + "}),e.jsx(n,{children:"5-star tutor reviews"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"120 + "}),e.jsx(n,{children:"Subjects taught"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"200 + "}),e.jsx(n,{children:"Tutor nationalities"})]})]})})]});export{j as default};
+`,m="/learn-lingo/assets/smile-C_OMyEqn.svg",j=()=>e.jsxs("div",{className:"container",children:[e.jsxs(s,{children:[e.jsxs(c,{children:[e.jsxs(l,{children:["Unlock your potential with the best"," ",e.jsx(a,{children:e.jsx("i",{children:"language"})})," ","tutors"]}),e.jsx(x,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),e.jsx(d,{type:"button",children:"Get started"})]}),e.jsx(h,{children:e.jsx("img",{src:m,alt:"smilling girl"})})]}),e.jsx(g,{children:e.jsxs(p,{children:[e.jsxs(r,{children:[e.jsx(i,{children:"32,000 + "}),e.jsx(n,{children:"Experienced tutors"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"300,000 + "}),e.jsx(n,{children:"5-star tutor reviews"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"120 + "}),e.jsx(n,{children:"Subjects taught"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"200 + "}),e.jsx(n,{children:"Tutor nationalities"})]})]})})]});export{j as default};
