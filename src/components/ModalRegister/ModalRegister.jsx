@@ -1,5 +1,13 @@
 import { RegisterForm } from "../RegisterForm/RegisterForm";
 import { useEffect } from "react";
+import {
+  CloseBtn,
+  Modal,
+  ModalDescr,
+  ModalOverlay,
+  ModalTitle,
+} from "./ModalRegister.Styled";
+import { CgClose } from "react-icons/cg";
 
 export const ModalRegister = ({ openModal }) => {
   // componentDidMount()
@@ -26,26 +34,24 @@ export const ModalRegister = ({ openModal }) => {
     }
   };
 
-  const handleCloseClick = (evt) => {
-    if (evt.target === evt.currentTarget) {
-      openModal();
-    }
+  const handleCloseClick = () => {
+    openModal();
   };
 
   return (
-    <div onClick={handleOverlayClick}>
-      <div>
-        <button onClick={handleCloseClick} type="button">
-          &times;
-        </button>
-        <h2>Registration</h2>
-        <p>
+    <ModalOverlay onClick={handleOverlayClick}>
+      <Modal>
+        <CloseBtn onClick={handleCloseClick} type="button">
+          <CgClose />
+        </CloseBtn>
+        <ModalTitle>Registration</ModalTitle>
+        <ModalDescr>
           Thank you for your interest in our platform! In order to register, we
           need some information. Please provide us with the following
           information
-        </p>
+        </ModalDescr>
         <RegisterForm />
-      </div>
-    </div>
+      </Modal>
+    </ModalOverlay>
   );
 };

@@ -21,6 +21,7 @@ export const TextBlockTitle = styled.h1`
 `;
 
 export const TitleAccentText = styled.span`
+  color: ${(props) => props.theme.colors.HomeAccentText};
   border-radius: 14px;
   background-color: ${(props) => props.theme.colors.thirdAccentColor};
 `;

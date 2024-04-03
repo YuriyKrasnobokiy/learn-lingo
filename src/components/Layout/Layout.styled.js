@@ -21,6 +21,7 @@ export const LogoTextStyled = styled.span`
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-left: 8px;
+  margin-right: auto;
 `;
 
 export const HeaderNav = styled.div`

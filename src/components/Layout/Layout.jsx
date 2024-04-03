@@ -28,13 +28,19 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
     <>
       <header>
         <HeaderWrapper>
-          <LogoWrapperStyled>
-            <img src={UkraineIcon} alt="ukraine" />
-            <LogoTextStyled>LearnLingo</LogoTextStyled>
-          </LogoWrapperStyled>
           <HeaderNav>
-            <NavLinkStyled to="/">Home</NavLinkStyled>
-            <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
+            <LogoWrapperStyled>
+              <img src={UkraineIcon} alt="ukraine" />
+            </LogoWrapperStyled>
+            <div>
+              <LogoTextStyled>LearnLingo</LogoTextStyled>
+
+              <NavLinkStyled to="/">Home</NavLinkStyled>
+              <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
+            </div>
+          </HeaderNav>
+
+          <AuthBtnsWrap>
             <ThemeBtn type="button" onClick={toggleTheme}>
               {currentTheme === "dark" ? (
                 <MdOutlineNightsStay />
@@ -42,9 +48,6 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
                 <MdOutlineWbSunny />
               )}
             </ThemeBtn>
-          </HeaderNav>
-
-          <AuthBtnsWrap>
             <LoginButtonStyled type="button">
               <LoginBtnIcon src={LoginIcon} alt="login arrow" />
               Log In
