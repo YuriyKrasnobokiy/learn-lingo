@@ -7,7 +7,8 @@ import {
   StyledField,
   StyledForm,
 } from "./RegisterForm.Styled";
-import { FiEye } from "react-icons/fi";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useState } from "react";
 {
   /* <FiEyeOff /> */
 }
@@ -21,6 +22,12 @@ const schema = yup.object().shape({
 });
 
 export const RegisterForm = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClick = () => {
+    setShowPassword(!showPassword);
+  };
+
   const initialValues = {
     name: "",
     email: "",
@@ -60,11 +67,11 @@ export const RegisterForm = () => {
           />
 
           <FieldErrorStyled component="p" name="password" />
-          <EyeBtnStyled type="button">
-            <FiEye />
+          <EyeBtnStyled type="button" onClick={handleClick}>
+            {showPassword ? <FiEye /> : <FiEyeOff />}
           </EyeBtnStyled>
           <StyledField
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
             autoComplete="current-password"
             placeholder="Password"
