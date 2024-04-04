@@ -94,6 +94,6 @@ export const StatsDescr = styled.p`
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;
-  max-width: 106px;
+  max-width: 92px;
   color: ${(props) => props.theme.colors.StatsDescrColor};
 `;

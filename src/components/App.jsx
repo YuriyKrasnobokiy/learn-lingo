@@ -28,6 +28,7 @@ export const themes = {
       ModalButtonBGColor: "#f4c550",
       FormFieldBorderColor: "rgba(18, 20, 23, 0.1)",
       StyledFieldColor: "#121417",
+      ErrorMessageColor: "#992211",
     },
   },
   dark: {
@@ -48,6 +49,7 @@ export const themes = {
       ModalButtonBGColor: "#f4c550",
       FormFieldBorderColor: "rgba(18, 20, 23, 0.1)",
       StyledFieldColor: "#121417",
+      ErrorMessageColor: "#992211",
     },
   },
 };

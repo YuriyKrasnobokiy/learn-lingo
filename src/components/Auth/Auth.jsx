@@ -19,7 +19,6 @@ export const Auth = () => {
   };
 
   const openLoginForm = () => {
-    console.log("LoginForm is open");
     setIsLoginFormOpen(true);
     setIsOpenModal(true);
   };
@@ -41,7 +40,11 @@ export const Auth = () => {
 
       {isOpenModal && (
         <Modal openModal={openModal}>
-          {isLoginFormOpen ? <LoginForm /> : <RegisterForm />}
+          {isLoginFormOpen ? (
+            <LoginForm openModal={openModal} />
+          ) : (
+            <RegisterForm openModal={openModal} />
+          )}
         </Modal>
       )}
     </AuthBtnsWrap>

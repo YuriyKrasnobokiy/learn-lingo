@@ -11,6 +11,8 @@ import {
 } from "./RegisterForm.Styled";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 const schema = yup.object().shape({
   name: yup.string().min(2).required("Required"),
@@ -18,7 +20,7 @@ const schema = yup.object().shape({
   password: yup.string().min(6).required("Required"),
 });
 
-export const RegisterForm = () => {
+export const RegisterForm = ({ openModal }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClick = () => {
@@ -32,11 +34,20 @@ export const RegisterForm = () => {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    const userData = {
-      ...values,
-    };
-    console.log("userData: ", userData);
-    resetForm();
+    console.log("Form values: ", values);
+
+    createUserWithEmailAndPassword(auth, values.email, values.password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User registered: ", user);
+        resetForm();
+        openModal();
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Registration error:", errorCode, errorMessage);
+      });
   };
 
   return (
@@ -64,7 +75,7 @@ export const RegisterForm = () => {
           <StyledField
             type="email"
             name="email"
-            autoComplete="current-email"
+            autoComplete="email"
             placeholder="Email"
           />
 
@@ -75,7 +86,7 @@ export const RegisterForm = () => {
           <StyledField
             type={showPassword ? "text" : "password"}
             name="password"
-            autoComplete="current-password"
+            autoComplete="new-password"
             placeholder="Password"
           />
 

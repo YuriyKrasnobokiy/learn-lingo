@@ -77,3 +77,11 @@ export const EyeBtnStyled = styled.button`
   bottom: 182px;
   background-color: transparent;
 `;
+
+export const ErrorMessageStyled = styled.p`
+  position: absolute;
+  bottom: 30px;
+  font-size: 18px;
+  line-height: 1.375;
+  color: ${(props) => props.theme.colors.ErrorMessageColor};
+`;
