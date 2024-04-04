@@ -1,15 +1,9 @@
-import { RegisterForm } from "../RegisterForm/RegisterForm";
+// import { RegisterForm } from "../RegisterForm/RegisterForm";
 import { useEffect } from "react";
-import {
-  CloseBtn,
-  Modal,
-  ModalDescr,
-  ModalOverlay,
-  ModalTitle,
-} from "./ModalRegister.Styled";
+import { CloseBtn, ModalOverlay, ModalStyled } from "./Modal.Styled";
 import { CgClose } from "react-icons/cg";
 
-export const ModalRegister = ({ openModal }) => {
+export const Modal = ({ openModal, children }) => {
   // componentDidMount()
   useEffect(() => {
     const handleKeyDown = (evt) => {
@@ -40,18 +34,13 @@ export const ModalRegister = ({ openModal }) => {
 
   return (
     <ModalOverlay onClick={handleOverlayClick}>
-      <Modal>
+      <ModalStyled>
         <CloseBtn onClick={handleCloseClick} type="button">
           <CgClose />
         </CloseBtn>
-        <ModalTitle>Registration</ModalTitle>
-        <ModalDescr>
-          Thank you for your interest in our platform! In order to register, we
-          need some information. Please provide us with the following
-          information
-        </ModalDescr>
-        <RegisterForm />
-      </Modal>
+        {children}
+        {/* <RegisterForm /> */}
+      </ModalStyled>
     </ModalOverlay>
   );
 };

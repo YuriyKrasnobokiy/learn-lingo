@@ -1,7 +1,7 @@
 import { ErrorMessage, Field, Form } from "formik";
 import styled from "styled-components";
 
-export const RegistrTitle = styled.h2`
+export const LoginTitle = styled.h2`
   font-weight: 500;
   font-size: 40px;
   line-height: 1.2;
@@ -11,7 +11,7 @@ export const RegistrTitle = styled.h2`
   color: ${(props) => props.theme.colors.ModalTitleColor};
 `;
 
-export const RegistrDescr = styled.p`
+export const LoginDescr = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375;

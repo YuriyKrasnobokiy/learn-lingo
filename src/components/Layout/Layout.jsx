@@ -1,28 +1,30 @@
 import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineNightsStay } from "react-icons/md";
 import {
-  AuthBtnsWrap,
+  // AuthBtnsWrap,
   HeaderNav,
   HeaderWrapper,
-  LoginBtnIcon,
-  LoginButtonStyled,
+  // LoginBtnIcon,
+  // LoginButtonStyled,
   LogoTextStyled,
   LogoWrapperStyled,
   NavLinkStyled,
-  RegisterButtonStyled,
+  // RegisterButtonStyled,
   ThemeBtn,
 } from "./Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
-import LoginIcon from "../../assets/icons/login.svg";
-import { useState } from "react";
-import { ModalRegister } from "../ModalRegister/ModalRegister";
+import { Auth } from "../Auth/Auth";
+// import LoginIcon from "../../assets/icons/login.svg";
+// import { useState } from "react";
+// import { Modal } from "../Modal/Modal";
+// import { RegisterForm } from "../RegisterForm/RegisterForm";
 
 export const Layout = ({ children, toggleTheme, currentTheme }) => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  // const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const openModal = () => {
-    setIsOpenModal((prevState) => !prevState);
-  };
+  // const openModal = () => {
+  //   setIsOpenModal((prevState) => !prevState);
+  // };
 
   return (
     <>
@@ -40,14 +42,14 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
             </div>
           </HeaderNav>
 
-          <AuthBtnsWrap>
-            <ThemeBtn type="button" onClick={toggleTheme}>
-              {currentTheme === "dark" ? (
-                <MdOutlineNightsStay />
-              ) : (
-                <MdOutlineWbSunny />
-              )}
-            </ThemeBtn>
+          <ThemeBtn type="button" onClick={toggleTheme}>
+            {currentTheme === "dark" ? (
+              <MdOutlineNightsStay />
+            ) : (
+              <MdOutlineWbSunny />
+            )}
+          </ThemeBtn>
+          {/* <AuthBtnsWrap>
             <LoginButtonStyled type="button">
               <LoginBtnIcon src={LoginIcon} alt="login arrow" />
               Log In
@@ -55,8 +57,13 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
             <RegisterButtonStyled type="button" onClick={() => openModal()}>
               Registration
             </RegisterButtonStyled>
-            {isOpenModal && <ModalRegister openModal={openModal} />}
-          </AuthBtnsWrap>
+            {isOpenModal && (
+              <Modal openModal={openModal}>
+                <RegisterForm />
+              </Modal>
+            )}
+          </AuthBtnsWrap> */}
+          <Auth />
         </HeaderWrapper>
       </header>
       <main>{children}</main>

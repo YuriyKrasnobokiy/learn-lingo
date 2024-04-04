@@ -15,7 +15,7 @@ export const ModalOverlay = styled.div`
   }
 `;
 
-export const Modal = styled.div`
+export const ModalStyled = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
@@ -42,22 +42,4 @@ export const CloseBtn = styled.button`
   &:hover {
     color: ${(props) => props.theme.colors.accentColor};
   }
-`;
-
-export const ModalTitle = styled.h2`
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  text-align: start;
-  margin-bottom: 20px;
-  color: ${(props) => props.theme.colors.ModalTitleColor};
-`;
-
-export const ModalDescr = styled.p`
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.375;
-  color: ${(props) => props.theme.colors.ModalDescrColor};
-  margin-bottom: 40px;
 `;

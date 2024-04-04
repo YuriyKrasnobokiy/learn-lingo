@@ -1,24 +1,23 @@
 import { Formik } from "formik";
 import * as yup from "yup";
+import { FiEye, FiEyeOff } from "react-icons/fi";
+import { useState } from "react";
 import {
   EyeBtnStyled,
   FieldErrorStyled,
-  RegistrDescr,
-  RegistrTitle,
+  LoginDescr,
+  LoginTitle,
   StyledButton,
   StyledField,
   StyledForm,
-} from "./RegisterForm.Styled";
-import { FiEye, FiEyeOff } from "react-icons/fi";
-import { useState } from "react";
+} from "./LoginForm.Styled";
 
 const schema = yup.object().shape({
   name: yup.string().min(2).required("Required"),
-  email: yup.string().email("Invalid email").required("Required"),
   password: yup.string().min(6).required("Required"),
 });
 
-export const RegisterForm = () => {
+export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClick = () => {
@@ -27,7 +26,6 @@ export const RegisterForm = () => {
 
   const initialValues = {
     name: "",
-    email: "",
     password: "",
   };
 
@@ -38,14 +36,13 @@ export const RegisterForm = () => {
     console.log("userData: ", userData);
     resetForm();
   };
-
   return (
     <>
-      <RegistrTitle>Registration</RegistrTitle>
-      <RegistrDescr>
-        Thank you for your interest in our platform! In order to register, we
-        need some information. Please provide us with the following information
-      </RegistrDescr>
+      <LoginTitle>Log In</LoginTitle>
+      <LoginDescr>
+        Welcome back! Please enter your credentials to access your account and
+        continue your search for an teacher.
+      </LoginDescr>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
@@ -58,14 +55,6 @@ export const RegisterForm = () => {
             name="name"
             autoComplete="on"
             placeholder="Name"
-          />
-
-          <FieldErrorStyled component="p" name="email" />
-          <StyledField
-            type="email"
-            name="email"
-            autoComplete="current-email"
-            placeholder="Email"
           />
 
           <FieldErrorStyled component="p" name="password" />
