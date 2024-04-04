@@ -14,6 +14,7 @@ import {
 } from "./Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import { Auth } from "../Auth/Auth";
+import { UserMenu } from "../UserMenu/UserMenu";
 // import LoginIcon from "../../assets/icons/login.svg";
 // import { useState } from "react";
 // import { Modal } from "../Modal/Modal";
@@ -49,21 +50,7 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
               <MdOutlineWbSunny />
             )}
           </ThemeBtn>
-          {/* <AuthBtnsWrap>
-            <LoginButtonStyled type="button">
-              <LoginBtnIcon src={LoginIcon} alt="login arrow" />
-              Log In
-            </LoginButtonStyled>
-            <RegisterButtonStyled type="button" onClick={() => openModal()}>
-              Registration
-            </RegisterButtonStyled>
-            {isOpenModal && (
-              <Modal openModal={openModal}>
-                <RegisterForm />
-              </Modal>
-            )}
-          </AuthBtnsWrap> */}
-          <Auth />
+          <UserMenu />
         </HeaderWrapper>
       </header>
       <main>{children}</main>
