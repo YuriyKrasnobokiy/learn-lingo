@@ -2,6 +2,8 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { auth } from "../firebase";
 import { Auth } from "../Auth/Auth";
+import { LogoutBtn, UserMenuStyled } from "./UserMenu.Styled";
+import { PiSignOutBold } from "react-icons/pi";
 
 export const UserMenu = () => {
   const [authUser, setAuthUser] = useState(null);
@@ -28,12 +30,13 @@ export const UserMenu = () => {
   return (
     <>
       {authUser ? (
-        <div>
+        <UserMenuStyled>
           <p>{`Hello ${authUser.email}`}</p>
-          <button type="button" onClick={userSignOut}>
+          <LogoutBtn type="button" onClick={userSignOut}>
+            <PiSignOutBold />
             Sign Out
-          </button>
-        </div>
+          </LogoutBtn>
+        </UserMenuStyled>
       ) : (
         <Auth />
       )}
