@@ -28,10 +28,11 @@ import {
   TeachersStatsLink,
   TeachersWrap,
 } from "./Teachers.styled";
+
 import OnlineIcon from "../../assets/icons/online.svg";
-import BookIcon from "../../assets/icons/book.svg";
+import { LuBookOpen } from "react-icons/lu";
 import StarIcon from "../../assets/icons/star.svg";
-import HeartIcon from "../../assets/icons/heart.svg";
+import { VscHeart } from "react-icons/vsc";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
@@ -77,7 +78,7 @@ const Teachers = () => {
                   <TeacherStatsList className="teacher-info">
                     <TeachersStatsLink>
                       <StatsLiWrap>
-                        <StatsLiImg src={BookIcon} alt="book" />
+                        <LuBookOpen style={{ marginRight: "12px" }} />
                         Lessons online
                       </StatsLiWrap>
                     </TeachersStatsLink>
@@ -97,7 +98,7 @@ const Teachers = () => {
                   </TeacherStatsList>
 
                   <TeacherHeartButton type="button">
-                    <img src={HeartIcon} alt="heart" />
+                    <VscHeart />
                   </TeacherHeartButton>
                 </TeacherStatsWrap>
 

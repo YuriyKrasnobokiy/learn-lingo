@@ -39,6 +39,8 @@ export const themes = {
       teacherInfoTextAccent: "#8a8a89",
       levelsListItemBGC: "#f4c550",
       levelsListItemBorder: "1px solid rgba(18, 20, 23, 0.2)",
+      teacherHeartColor: "#121417",
+      teacherHeartHoverColor: "#f4c550",
     },
   },
   dark: {
@@ -70,6 +72,8 @@ export const themes = {
       teacherInfoTextAccent: "#8a8a89",
       levelsListItemBGC: "#f4c550",
       levelsListItemBorder: "1px solid #8a8a89",
+      teacherHeartColor: "#f8f8f8",
+      teacherHeartHoverColor: "#f4c550",
     },
   },
 };

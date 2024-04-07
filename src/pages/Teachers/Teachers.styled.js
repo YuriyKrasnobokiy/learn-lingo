@@ -48,12 +48,13 @@ export const PreTitle = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: ${(props) => props.theme.colors.teacherPretitleColor};
-  margin-right: 180px;
+  margin-right: 178px;
 `;
 
 export const TeacherStatsWrap = styled.div`
   display: flex;
   margin-bottom: 8px;
+  align-items: center;
 `;
 
 export const TeacherStatsList = styled.ul`
@@ -76,6 +77,7 @@ export const TeachersStatsLink = styled.li`
 
 export const StatsLiWrap = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const StatsLiImg = styled.img`
@@ -87,9 +89,14 @@ export const TeacherPrice = styled.span`
 `;
 
 export const TeacherHeartButton = styled.button`
-  width: 24px;
-  height: 24px;
+  font-size: 26px;
   background-color: transparent;
+  color: currentColor;
+  transition: color 0.3s linear;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.teacherHeartHoverColor};
+  }
 `;
 
 // -------------TITLE---------- //
@@ -164,7 +171,6 @@ export const LevelsListItem = styled.li`
 
   &:first-child {
     background-color: ${(props) => props.theme.colors.levelsListItemBGC};
-    /* border: 1px solid transparent; */
   }
 `;
 
