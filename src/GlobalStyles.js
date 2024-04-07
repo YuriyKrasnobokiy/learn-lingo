@@ -23,14 +23,15 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  h2 {
+  /* h2 {
     text-align: center;
-  }
+  } */
 
   button {
     display: flex;
     margin: 0 auto;
     align-items: center;
+    justify-content: center;
     font-family: inherit;
     cursor: pointer;
     border: none;

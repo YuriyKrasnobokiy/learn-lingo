@@ -29,6 +29,10 @@ export const themes = {
       FormFieldBorderColor: "rgba(18, 20, 23, 0.1)",
       StyledFieldColor: "#121417",
       ErrorMessageColor: "#992211",
+      teachersBGColor: "#f8f8f8",
+      teacherCardBGC: "#fff",
+      teacherCardBorderColor: "transparent",
+      teachersButtonColor: "#121417",
     },
   },
   dark: {
@@ -50,6 +54,10 @@ export const themes = {
       FormFieldBorderColor: "rgba(18, 20, 23, 0.1)",
       StyledFieldColor: "#121417",
       ErrorMessageColor: "#992211",
+      teachersBGColor: "#121417",
+      teacherCardBGC: "rgba(18, 20, 23, 1)",
+      teacherCardBorderColor: "#fbe9ba",
+      teachersButtonColor: "#121417",
     },
   },
 };
@@ -74,7 +82,7 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/teachers" element={<Teachers />}></Route>
-            {/* <Route path="/products/:productId/*" element={<ProductDetails />} /> */}
+            <Route path="/teachers/:teacherId/*" element={<teacherDetails />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
