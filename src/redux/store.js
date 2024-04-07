@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-// import modalReducer from "./modal/modalSlice";
 import {
   FLUSH,
   REHYDRATE,
@@ -22,7 +21,6 @@ const teachersConfig = {
 export const store = configureStore({
   reducer: {
     teachersStore: persistReducer(teachersConfig, teachersSliceReducer),
-    // modal: modalReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

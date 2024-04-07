@@ -6,6 +6,7 @@ export const ModalOverlay = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 99;
   background-color: ${(props) => props.theme.colors.ModalBgColor};
   &:hover {
     cursor: pointer;
