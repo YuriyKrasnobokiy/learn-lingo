@@ -15,7 +15,9 @@ import OnlineIcon from "../../assets/icons/online.svg";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [visibleTeachers, setVisibleTeachers] = useState([]);
+  const [count, setCount] = useState(4);
+
   useEffect(() => {
     const dbRef = ref(db);
     const dataFetch = onValue(dbRef, (snapshot) => {
@@ -27,14 +29,21 @@ const Teachers = () => {
     });
     return () => {
       dataFetch();
-      setIsLoading(false);
     };
   }, []);
+
+  useEffect(() => {
+    setVisibleTeachers(teachers.slice(0, count));
+  }, [teachers, count]);
+
+  const handleLoadMore = () => {
+    setCount((prevCount) => prevCount + 4);
+  };
 
   return (
     <TeachersWrap>
       <ul>
-        {teachers.slice(0, 4).map((teacher) => (
+        {visibleTeachers.map((teacher) => (
           <TeacherCard key={nanoid()}>
             <AvatartWrap>
               <AvatarStyled src={teacher.avatar_url} alt="avatar" />
@@ -51,7 +60,11 @@ const Teachers = () => {
           </TeacherCard>
         ))}
       </ul>
-      <LoadMoreBtn type="button">Load More</LoadMoreBtn>
+      {count <= visibleTeachers.length && (
+        <LoadMoreBtn type="button" onClick={handleLoadMore}>
+          Load More
+        </LoadMoreBtn>
+      )}
     </TeachersWrap>
   );
 };

@@ -21,7 +21,7 @@ const teachersSlice = createSlice({
   initialState: {
     teachers: [],
     // favoriteCars: [],
-    // currentPage: 1,
+    currentPage: 1,
     isLoading: false,
     error: null,
     // filterWord: "",
