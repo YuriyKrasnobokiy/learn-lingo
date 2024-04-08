@@ -41,6 +41,8 @@ export const themes = {
       levelsListItemBorder: "1px solid rgba(18, 20, 23, 0.2)",
       teacherHeartColor: "#121417",
       teacherHeartHoverColor: "#f4c550",
+      trialLessonBtnBGC: "#f4c550",
+      trialLessonBtnBGHover: "#ffdc86",
     },
   },
   dark: {
@@ -74,6 +76,8 @@ export const themes = {
       levelsListItemBorder: "1px solid #8a8a89",
       teacherHeartColor: "#f8f8f8",
       teacherHeartHoverColor: "#f4c550",
+      trialLessonBtnBGC: "#f4c550",
+      trialLessonBtnBGHover: "#ffdc86",
     },
   },
 };

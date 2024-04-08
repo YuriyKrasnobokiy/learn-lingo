@@ -10,8 +10,6 @@ import {
   InfoText,
   InfoTextAccent,
   InfoTextLangs,
-  LevelsList,
-  LevelsListItem,
   LoadMoreBtn,
   PreTitle,
   ReadMoreBtn,
@@ -33,11 +31,14 @@ import OnlineIcon from "../../assets/icons/online.svg";
 import { LuBookOpen } from "react-icons/lu";
 import StarIcon from "../../assets/icons/star.svg";
 import { VscHeart } from "react-icons/vsc";
+import { MoreTeacherInfo } from "../../components/MoreTeacherInfo/MoreTeacherInfo";
+import { LevelsList } from "../../components/LevelsList/LevelsList";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
   const [visibleTeachers, setVisibleTeachers] = useState([]);
   const [count, setCount] = useState(4);
+  const [expandedTeacherId, setExpandedTeacherId] = useState(null);
   const teachersPerPage = 4;
 
   useEffect(() => {
@@ -57,8 +58,13 @@ const Teachers = () => {
   useEffect(() => {
     setVisibleTeachers(teachers.slice(0, count));
   }, [teachers, count]);
+
   const handleLoadMore = () => {
     setCount((prevCount) => prevCount + teachersPerPage);
+  };
+
+  const handleReadMore = (teacherId) => {
+    setExpandedTeacherId(teacherId === expandedTeacherId ? null : teacherId);
   };
 
   return (
@@ -66,7 +72,7 @@ const Teachers = () => {
       <TeachersWrap>
         <ul>
           {visibleTeachers.map((teacher) => (
-            <TeacherCard key={nanoid()}>
+            <TeacherCard key={teacher.id}>
               <AvatartWrap>
                 <AvatarStyled src={teacher.avatar_url} alt="avatar" />
                 <AvatarOnLine src={OnlineIcon} alt="online" />
@@ -128,12 +134,22 @@ const Teachers = () => {
                     </InfoText>
                   </TeacherInfoLi>
                 </TeacherInfoList>
-                <ReadMoreBtn type="button">Read more</ReadMoreBtn>
-                <LevelsList>
-                  {teacher.levels.map((level) => (
-                    <LevelsListItem key={nanoid()}>#{level}</LevelsListItem>
-                  ))}
-                </LevelsList>
+                {expandedTeacherId !== teacher.id && (
+                  <>
+                    <ReadMoreBtn
+                      type="button"
+                      onClick={() => handleReadMore(teacher.id)}
+                    >
+                      Read more
+                    </ReadMoreBtn>
+
+                    <LevelsList teacher={teacher} />
+                  </>
+                )}
+
+                {expandedTeacherId === teacher.id && (
+                  <MoreTeacherInfo teacher={teacher} />
+                )}
               </div>
             </TeacherCard>
           ))}
