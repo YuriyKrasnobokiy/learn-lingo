@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   MoreInfoText,
   MoreInfoWrap,
@@ -16,8 +16,16 @@ import { nanoid } from "nanoid";
 import { RxAvatar } from "react-icons/rx";
 import StarIcon from "../../assets/icons/star.svg";
 import { LevelsList } from "../LevelsList/LevelsList";
+import { Modal } from "../Modal/Modal";
+import { TrialLesson } from "../TrialLesson/TrialLesson";
 
 export const MoreTeacherInfo = ({ teacher }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const openModal = () => {
+    setIsOpenModal((prevState) => !prevState);
+  };
+
   return (
     <>
       <MoreInfoWrap>
@@ -45,7 +53,14 @@ export const MoreTeacherInfo = ({ teacher }) => {
           ))}
         </ReviewsList>
         <LevelsList teacher={teacher} />
-        <TrialLessonBtn type="button">Book trial lesson</TrialLessonBtn>
+        <TrialLessonBtn type="button" onClick={openModal}>
+          Book trial lesson
+        </TrialLessonBtn>
+        {isOpenModal && (
+          <Modal openModal={openModal}>
+            <TrialLesson teacher={teacher} />
+          </Modal>
+        )}
       </MoreInfoWrap>
     </>
   );

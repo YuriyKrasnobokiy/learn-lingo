@@ -39,7 +39,6 @@ export const Modal = ({ openModal, children }) => {
           <CgClose />
         </CloseBtn>
         {children}
-        {/* <RegisterForm /> */}
       </ModalStyled>
     </ModalOverlay>
   );
