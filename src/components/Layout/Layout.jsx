@@ -7,7 +7,7 @@ import {
   LogoWrapperStyled,
   NavLinkStyled,
   ThemeBtn,
-} from "./Layout.Styled";
+} from "../../components/Layout/Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import { UserMenu } from "../UserMenu/UserMenu";
 
