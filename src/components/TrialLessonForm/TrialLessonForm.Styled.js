@@ -1,4 +1,4 @@
-import { Form } from "formik";
+import { ErrorMessage, Form } from "formik";
 import styled from "styled-components";
 
 export const TrialFormTitle = styled.h2`
@@ -20,6 +20,8 @@ export const RadioBtnsWrap = styled.div`
 `;
 
 export const RadioInputLabel = styled.label`
+  display: flex;
+  align-items: center;
   font-size: 16px;
   line-height: 1.37;
 
@@ -74,4 +76,8 @@ export const TrialLessonBtnStyled = styled.button`
     background-color: ${(props) =>
       props.theme.colors.modalTrialLessonBtnBGHover};
   }
+`;
+
+export const TrialLessonErrorMessageStyled = styled(ErrorMessage)`
+  color: ${(props) => props.theme.colors.ErrorMessageColor};
 `;

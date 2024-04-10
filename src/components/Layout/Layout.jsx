@@ -25,6 +25,7 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
 
               <NavLinkStyled to="/">Home</NavLinkStyled>
               <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
+              <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
             </div>
           </HeaderNav>
 

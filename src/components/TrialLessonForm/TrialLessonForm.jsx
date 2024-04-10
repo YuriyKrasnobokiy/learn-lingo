@@ -9,11 +9,12 @@ import {
   TrialForm,
   TrialFormTitle,
   TrialLessonBtnStyled,
+  TrialLessonErrorMessageStyled,
 } from "./TrialLessonForm.Styled";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-  option: yup.string().nullable().required("Please select an option"),
+  option: yup.string().required("Please select an option"),
   name: yup.string().min(2).required("Required"),
   email: yup.string().email("Invalid email").required("Required"),
   phone: yup.string().min(10, "Invalid phone number").required("Required"),
@@ -45,7 +46,7 @@ export const TrialLessonForm = ({ openModal }) => {
       >
         <TrialForm>
           <RadioBtnsWrap>
-            <ErrorMessage component="p" name="option" />
+            <TrialLessonErrorMessageStyled component="p" name="option" />
             <RadioInputLabel>
               <RadioInput
                 type="radio"
@@ -81,11 +82,11 @@ export const TrialLessonForm = ({ openModal }) => {
           </RadioBtnsWrap>
 
           <TextInputWrapper>
-            <ErrorMessage component="p" name="name" />
+            <TrialLessonErrorMessageStyled component="p" name="name" />
             <TextInput type="text" name="name" placeholder="Full Name" />
-            <ErrorMessage component="p" name="email" />
+            <TrialLessonErrorMessageStyled component="p" name="email" />
             <TextInput type="email" name="email" placeholder="Email" />
-            <ErrorMessage component="p" name="phone" />
+            <TrialLessonErrorMessageStyled component="p" name="phone" />
             <TextInput type="tel" name="phone" placeholder="Phone number" />
           </TextInputWrapper>
 

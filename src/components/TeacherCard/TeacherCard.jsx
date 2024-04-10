@@ -24,12 +24,34 @@ import OnlineIcon from "../../assets/icons/online.svg";
 import { LuBookOpen } from "react-icons/lu";
 import StarIcon from "../../assets/icons/star.svg";
 import { VscHeart } from "react-icons/vsc";
+import { VscHeartFilled } from "react-icons/vsc";
 import { MoreTeacherInfo } from "../../components/MoreTeacherInfo/MoreTeacherInfo";
 import { LevelsList } from "../../components/LevelsList/LevelsList";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addToFavorites,
+  removeFromFavorites,
+  toggleSelectedTeacher,
+} from "../../redux/teachers/teachersSlice";
+import { selectToggleSelectedTeachers } from "../../redux/teachers/teachersSelectors";
 
 export const TeacherCard = ({ teacher }) => {
   const [expandedTeacherId, setExpandedTeacherId] = useState(null);
+  ////////////////////////
+  const dispatch = useDispatch();
 
+  const selectedTeachersIds = useSelector(selectToggleSelectedTeachers);
+  const isFavorite = selectedTeachersIds.includes(teacher.id);
+
+  const toggleFavorite = (teacher) => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(teacher));
+    } else {
+      dispatch(addToFavorites(teacher));
+    }
+    dispatch(toggleSelectedTeacher(teacher.id));
+  };
+  /////////////////////////////
   const handleReadMore = (teacherId) => {
     setExpandedTeacherId(teacherId === expandedTeacherId ? null : teacherId);
   };
@@ -67,8 +89,11 @@ export const TeacherCard = ({ teacher }) => {
               </TeachersStatsLink>
             </TeacherStatsList>
 
-            <TeacherHeartButton type="button">
-              <VscHeart />
+            <TeacherHeartButton
+              type="button"
+              onClick={() => toggleFavorite(teacher)}
+            >
+              {isFavorite ? <VscHeartFilled /> : <VscHeart />}
             </TeacherHeartButton>
           </TeacherStatsWrap>
 

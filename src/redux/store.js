@@ -15,7 +15,7 @@ const teachersConfig = {
   key: "root",
   storage,
   // whitelist: ['favoriteCars', 'selectedCarIds'],
-  whitelist: ["favoriteTeachers"],
+  whitelist: ["favoriteTeachers", "selectedTeachersIds"],
 };
 
 export const store = configureStore({

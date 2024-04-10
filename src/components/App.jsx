@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const Teachers = lazy(() => import("../pages/Teachers/Teachers"));
+const Favorites = lazy(() => import("../pages/Favorites/Favorites"));
 
 export const themes = {
   light: {
@@ -117,6 +118,7 @@ export const App = () => {
             <Route path="/" element={<Home />}></Route>
             <Route path="/teachers" element={<Teachers />}></Route>
             <Route path="/teachers/:teacherId/*" element={<teacherDetails />} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
