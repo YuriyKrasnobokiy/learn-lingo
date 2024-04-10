@@ -12,13 +12,6 @@ import {
 } from "./TrialLessonForm.Styled";
 import * as yup from "yup";
 
-const initialValues = {
-  option: null,
-  name: "",
-  email: "",
-  phone: "",
-};
-
 const schema = yup.object().shape({
   option: yup.string().nullable().required("Please select an option"),
   name: yup.string().min(2).required("Required"),
@@ -27,6 +20,13 @@ const schema = yup.object().shape({
 });
 
 export const TrialLessonForm = ({ openModal }) => {
+  const initialValues = {
+    option: "",
+    name: "",
+    email: "",
+    phone: "",
+  };
+
   const handleSubmit = (values, { resetForm }) => {
     console.log("Form values: ", values);
     resetForm();
