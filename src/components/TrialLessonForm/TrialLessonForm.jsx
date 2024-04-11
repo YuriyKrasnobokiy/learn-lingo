@@ -1,5 +1,6 @@
 import React from "react";
-import { ErrorMessage, Formik } from "formik";
+import { Formik } from "formik";
+import toast from "react-hot-toast";
 import {
   RadioBtnsWrap,
   RadioInput,
@@ -11,9 +12,10 @@ import {
   TrialLessonBtnStyled,
   TrialLessonErrorMessageStyled,
 } from "./TrialLessonForm.Styled";
+
 import * as yup from "yup";
 
-const schema = yup.object().shape({
+const schemaTrialForm = yup.object().shape({
   option: yup.string().required("Please select an option"),
   name: yup.string().min(2).required("Required"),
   email: yup.string().email("Invalid email").required("Required"),
@@ -29,9 +31,14 @@ export const TrialLessonForm = ({ openModal }) => {
   };
 
   const handleSubmit = (values, { resetForm }) => {
-    console.log("Form values: ", values);
     resetForm();
     openModal();
+    toast.success(
+      `Thank you ${values.name}! Our manager will call you soon 😊 Have a nice day 😉`,
+      {
+        duration: 5000,
+      },
+    );
   };
 
   return (
@@ -41,7 +48,7 @@ export const TrialLessonForm = ({ openModal }) => {
       </TrialFormTitle>
       <Formik
         initialValues={initialValues}
-        validationSchema={schema}
+        validationSchema={schemaTrialForm}
         onSubmit={handleSubmit}
       >
         <TrialForm>
@@ -87,7 +94,7 @@ export const TrialLessonForm = ({ openModal }) => {
             <TrialLessonErrorMessageStyled component="p" name="email" />
             <TextInput type="email" name="email" placeholder="Email" />
             <TrialLessonErrorMessageStyled component="p" name="phone" />
-            <TextInput type="tel" name="phone" placeholder="Phone number" />
+            <TextInput type="text" name="phone" placeholder="Phone number" />
           </TextInputWrapper>
 
           <TrialLessonBtnStyled type="submit">Book</TrialLessonBtnStyled>

@@ -1,4 +1,4 @@
-import { ErrorMessage, Form } from "formik";
+import { ErrorMessage, Form, Field } from "formik";
 import styled from "styled-components";
 
 export const TrialFormTitle = styled.h2`
@@ -30,7 +30,7 @@ export const RadioInputLabel = styled.label`
   }
 `;
 
-export const RadioInput = styled.input`
+export const RadioInput = styled(Field)`
   margin: 0;
   margin-right: 8px;
   width: 24px;
@@ -42,7 +42,7 @@ export const TextInputWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-export const TextInput = styled.input`
+export const TextInput = styled(Field)`
   font-size: 16px;
   line-height: 1.375;
   width: 100%;

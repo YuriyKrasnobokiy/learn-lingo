@@ -58,7 +58,7 @@ export const MoreTeacherInfo = ({ teacher }) => {
         </TrialLessonBtn>
         {isOpenModal && (
           <Modal openModal={openModal}>
-            <TrialLesson teacher={teacher} />
+            <TrialLesson teacher={teacher} openModal={openModal} />
           </Modal>
         )}
       </MoreInfoWrap>

@@ -10,6 +10,7 @@ const teachersSlice = createSlice({
     // error: null,
     // filterWord: "",
     selectedTeachersIds: [],
+    loginedUsers: [],
   },
 
   reducers: {
@@ -21,6 +22,16 @@ const teachersSlice = createSlice({
       const teachersToRemove = action.payload;
       state.favoriteTeachers = state.favoriteTeachers.filter(
         (teacher) => teacher.id !== teachersToRemove.id,
+      );
+    },
+    addToLoginedUser(state, action) {
+      const user = action.payload;
+      state.loginedUsers.push(user);
+    },
+    removeFromLoginedUser(state, action) {
+      const usersToRemove = action.payload;
+      state.loginedUsers = state.loginedUsers.filter(
+        (user) => user.id !== usersToRemove.id,
       );
     },
     toggleSelectedTeacher(state, action) {
@@ -74,6 +85,8 @@ export const {
   addToFavorites,
   removeFromFavorites,
   toggleSelectedTeacher,
+  addToLoginedUser,
+  removeFromLoginedUser,
 } = teachersSlice.actions;
 
 export default teachersSlice.reducer;

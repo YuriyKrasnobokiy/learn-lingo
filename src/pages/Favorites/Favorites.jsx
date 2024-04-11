@@ -4,6 +4,7 @@ import { selectfavoriteTeachers } from "../../redux/teachers/teachersSelectors";
 
 const Favorites = () => {
   const favoriteTeachers = useSelector(selectfavoriteTeachers);
+
   return (
     <>
       <ul>

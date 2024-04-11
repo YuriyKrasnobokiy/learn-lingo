@@ -40,6 +40,7 @@ export const LoginForm = ({ openModal }) => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("User logined: ", user);
+
         resetForm();
         openModal();
       })

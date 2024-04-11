@@ -1,5 +1,6 @@
 import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineNightsStay } from "react-icons/md";
+import { Toaster } from "react-hot-toast";
 import {
   HeaderNav,
   HeaderWrapper,
@@ -25,7 +26,7 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
 
               <NavLinkStyled to="/">Home</NavLinkStyled>
               <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
-              <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
+              {/* {user && <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>} */}
             </div>
           </HeaderNav>
 
@@ -40,6 +41,7 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
         </HeaderWrapper>
       </header>
       <main>{children}</main>
+      <Toaster position="top-right" reverseOrder={false} />
     </>
   );
 };
