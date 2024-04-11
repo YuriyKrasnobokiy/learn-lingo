@@ -6,6 +6,7 @@ export const TrialLessonTitle = styled.h2`
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
+  color: ${(props) => props.theme.colors.trialLessonTitleColor};
 `;
 
 export const TrialLessonDescr = styled.p`
@@ -18,6 +19,7 @@ export const TrialLessonDescr = styled.p`
 export const TeacherNameWrap = styled.div`
   display: flex;
   margin-bottom: 40px;
+  color: ${(props) => props.theme.colors.trialLessonTeacherNameColor};
 `;
 
 export const TeacherAvatar = styled.img`

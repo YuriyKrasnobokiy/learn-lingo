@@ -6,6 +6,7 @@ export const TrialFormTitle = styled.h2`
   font-size: 24px;
   line-height: 1.33;
   margin-bottom: 20px;
+  color: ${(props) => props.theme.colors.TrialFormTitleColor};
 `;
 
 export const TrialForm = styled(Form)`
@@ -24,6 +25,7 @@ export const RadioInputLabel = styled.label`
   align-items: center;
   font-size: 16px;
   line-height: 1.37;
+  color: ${(props) => props.theme.colors.TrialFormRadioOptColor};
 
   &:not(:last-child) {
     margin-bottom: 16px;
