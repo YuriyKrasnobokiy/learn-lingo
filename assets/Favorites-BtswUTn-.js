@@ -1,1 +1,0 @@
-import{f as a,j as e}from"./index-C7Ja1pRh.js";import{a as t}from"./teachersSelectors-D-WLWeuv.js";const n=()=>{const r=a(t);return e.jsx(e.Fragment,{children:e.jsx("ul",{children:r.map(s=>e.jsxs("li",{children:[s.name," ",s.surname]},s.id))})})};export{n as default};
