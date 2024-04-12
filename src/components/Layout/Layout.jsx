@@ -11,8 +11,29 @@ import {
 } from "../../components/Layout/Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import { UserMenu } from "../UserMenu/UserMenu";
-
+///
+import { auth } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
+///
 export const Layout = ({ children, toggleTheme, currentTheme }) => {
+  ///
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+    });
+
+    // Відписка від слухача при розмонтуванні //
+    return () => unsubscribe();
+  }, []);
+
+  ///
   return (
     <>
       <header>
@@ -26,8 +47,9 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
 
               <NavLinkStyled to="/">Home</NavLinkStyled>
               <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
-              <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
-              {/* {user && <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>} */}
+              {isAuthenticated && (
+                <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
+              )}
             </div>
           </HeaderNav>
 

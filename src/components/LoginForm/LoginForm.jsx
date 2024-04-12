@@ -2,6 +2,7 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useState } from "react";
+// import { useSelector, useDispatch } from "react-redux";
 import {
   ErrorMessageStyled,
   EyeBtnStyled,
@@ -14,6 +15,8 @@ import {
 } from "./LoginForm.Styled";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+// import { selectLoginedUsers } from "../../redux/teachers/teachersSelectors";
+// import { addToLoginedUser } from "../../redux/teachers/teachersSlice";
 
 const schema = yup.object().shape({
   email: yup.string().email("Invalid email").required("Required"),
@@ -23,6 +26,8 @@ const schema = yup.object().shape({
 export const LoginForm = ({ openModal }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  // const dispatch = useDispatch();
+  // const loginedUsers = useSelector(selectLoginedUsers);
 
   const handleClick = () => {
     setShowPassword(!showPassword);
@@ -40,6 +45,8 @@ export const LoginForm = ({ openModal }) => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("User logined: ", user);
+        // dispatch(addToLoginedUser(user.uid));
+        // console.log(loginedUsers);
 
         resetForm();
         openModal();
@@ -47,9 +54,6 @@ export const LoginForm = ({ openModal }) => {
       .catch((error) => {
         console.log(error);
         setError("Sorry, couldn't find your account. Please try again");
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // console.error("Login error:", errorCode, errorMessage);
       });
   };
 

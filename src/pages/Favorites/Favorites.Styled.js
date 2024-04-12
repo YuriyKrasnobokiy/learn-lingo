@@ -17,4 +17,5 @@ export const FavoriteEmptyText = styled.h2`
   font-size: 40px;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  margin-top: 20px;
 `;

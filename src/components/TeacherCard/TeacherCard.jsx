@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AvatarOnLine,
   AvatarStyled,
@@ -34,11 +34,33 @@ import {
   toggleSelectedTeacher,
 } from "../../redux/teachers/teachersSlice";
 import { selectToggleSelectedTeachers } from "../../redux/teachers/teachersSelectors";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
+import toast from "react-hot-toast";
 
 export const TeacherCard = ({ teacher }) => {
   const [expandedTeacherId, setExpandedTeacherId] = useState(null);
   ////////////////////////
   const dispatch = useDispatch();
+  /////
+  ///
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+    });
+
+    // Відписка від слухача при розмонтуванні //
+    return () => unsubscribe();
+  }, []);
+
+  ///
+  /////
 
   const selectedTeachersIds = useSelector(selectToggleSelectedTeachers);
   const isFavorite = selectedTeachersIds.includes(teacher.id);
@@ -54,6 +76,14 @@ export const TeacherCard = ({ teacher }) => {
   /////////////////////////////
   const handleReadMore = (teacherId) => {
     setExpandedTeacherId(teacherId === expandedTeacherId ? null : teacherId);
+  };
+
+  const handleFavoriteClick = () => {
+    if (isAuthenticated) {
+      toggleFavorite(teacher);
+    } else {
+      toast.error("You must be logged in to add to favorites");
+    }
   };
 
   return (
@@ -89,10 +119,7 @@ export const TeacherCard = ({ teacher }) => {
               </TeachersStatsLink>
             </TeacherStatsList>
 
-            <TeacherHeartButton
-              type="button"
-              onClick={() => toggleFavorite(teacher)}
-            >
+            <TeacherHeartButton type="button" onClick={handleFavoriteClick}>
               {isFavorite ? <VscHeartFilled /> : <VscHeart />}
             </TeacherHeartButton>
           </TeacherStatsWrap>

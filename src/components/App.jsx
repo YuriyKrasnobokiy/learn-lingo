@@ -125,7 +125,6 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/teachers" element={<Teachers />}></Route>
-            <Route path="/teachers/:teacherId/*" element={<teacherDetails />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
