@@ -64,12 +64,15 @@ export const TeacherCard = ({ teacher }) => {
 
   const selectedTeachersIds = useSelector(selectToggleSelectedTeachers);
   const isFavorite = selectedTeachersIds.includes(teacher.id);
+  const user = auth.currentUser;
 
   const toggleFavorite = (teacher) => {
     if (isFavorite) {
-      dispatch(removeFromFavorites(teacher));
+      if (teacher.owner === user.uid) {
+        dispatch(removeFromFavorites(teacher));
+      }
     } else {
-      dispatch(addToFavorites(teacher));
+      dispatch(addToFavorites({ ...teacher, owner: user.uid }));
     }
     dispatch(toggleSelectedTeacher(teacher.id));
   };

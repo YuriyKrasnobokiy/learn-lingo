@@ -9,17 +9,26 @@ import {
   FavoriteEmptyImg,
   FavoriteEmptyText,
 } from "./Favorites.Styled";
+import { auth } from "../../components/firebase";
 
 const Favorites = () => {
   const favoriteTeachers = useSelector(selectfavoriteTeachers);
+  const user = auth.currentUser.uid;
+  const favoriteUserTeachers = favoriteTeachers.filter(
+    (teacher) => teacher.owner === user,
+  );
 
   return (
     <>
-      {favoriteTeachers.length > 0 ? (
+      {favoriteUserTeachers.length > 0 ? (
         <TeachersWrap>
           <ul>
-            {favoriteTeachers.map((teacher) => (
-              <TeacherCard key={teacher.id} teacher={teacher} />
+            {favoriteUserTeachers.map((teacher) => (
+              <TeacherCard
+                key={teacher.id}
+                teacher={teacher}
+                owner={teacher.owner}
+              />
             ))}
           </ul>
         </TeachersWrap>
