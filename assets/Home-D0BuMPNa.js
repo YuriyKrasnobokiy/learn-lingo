@@ -1,29 +1,29 @@
-import{u as o,j as e}from"./index-DImWaUvI.js";const s=o.div`
+import{u as o,a as c,j as e}from"./index-6leht5dD.js";const l=o.div`
   display: grid;
   grid-template-columns: 1fr 568px;
   gap: 24px;
-`,c=o.div`
+`,a=o.div`
   padding: 98px 108px 98px 64px;
   border-radius: 30px;
   background-color: ${t=>t.theme.colors.HomeTextBlkBGC};
-`,l=o.h1`
+`,d=o.h1`
   font-weight: 500;
   font-size: 48px;
   line-height: 1.16667;
   letter-spacing: -0.02em;
   margin-bottom: 32px;
-`,a=o.span`
+`,x=o.span`
   color: ${t=>t.theme.colors.HomeAccentText};
   border-radius: 14px;
   background-color: ${t=>t.theme.colors.thirdAccentColor};
-`,x=o.p`
+`,h=o.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 1.375;
   letter-spacing: -0.02em;
   margin-bottom: 64px;
   width: 471px;
-`,d=o.button`
+`,g=o.button`
   font-weight: 700;
   font-size: 18px;
   line-height: 1.55;
@@ -37,22 +37,22 @@ import{u as o,j as e}from"./index-DImWaUvI.js";const s=o.div`
   &:hover {
     background-color: ${t=>t.theme.colors.secondAccentColor};
   }
-`,h=o.div`
+`,p=o.div`
   /* width: 568px;
   height: 530px;
   border-radius: 30px;
   background-color: ${t=>t.theme.colors.HomeImgBlkBGC}; */
-`,g=o.div`
+`,m=o.div`
   padding: 40px 0;
   border: 1.5px dashed ${t=>t.theme.colors.accentColor};
   border-radius: 30px;
 
   margin-top: 24px;
-`,p=o.ul`
+`,u=o.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-`,r=o.li`
+`,n=o.li`
   display: flex;
   align-items: center;
 
@@ -65,11 +65,11 @@ import{u as o,j as e}from"./index-DImWaUvI.js";const s=o.div`
   line-height: 1.14;
   letter-spacing: -0.02em;
   margin-right: 16px;
-`,n=o.p`
+`,r=o.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;
   max-width: 92px;
   color: ${t=>t.theme.colors.StatsDescrColor};
-`,m="/learn-lingo/assets/smile-C_OMyEqn.svg",j=()=>e.jsxs("div",{className:"container",children:[e.jsxs(s,{children:[e.jsxs(c,{children:[e.jsxs(l,{children:["Unlock your potential with the best"," ",e.jsx(a,{children:e.jsx("i",{children:"language"})})," ","tutors"]}),e.jsx(x,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),e.jsx(d,{type:"button",children:"Get started"})]}),e.jsx(h,{children:e.jsx("img",{src:m,alt:"smilling girl"})})]}),e.jsx(g,{children:e.jsxs(p,{children:[e.jsxs(r,{children:[e.jsx(i,{children:"32,000 + "}),e.jsx(n,{children:"Experienced tutors"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"300,000 + "}),e.jsx(n,{children:"5-star tutor reviews"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"120 + "}),e.jsx(n,{children:"Subjects taught"})]}),e.jsxs(r,{children:[e.jsx(i,{children:"200 + "}),e.jsx(n,{children:"Tutor nationalities"})]})]})})]});export{j as default};
+`,j="/learn-lingo/assets/smile-C_OMyEqn.svg",f=()=>{const t=c(),s=()=>{t("/teachers")};return e.jsxs("div",{className:"container",children:[e.jsxs(l,{children:[e.jsxs(a,{children:[e.jsxs(d,{children:["Unlock your potential with the best"," ",e.jsx(x,{children:e.jsx("i",{children:"language"})})," ","tutors"]}),e.jsx(h,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),e.jsx(g,{type:"button",onClick:s,children:"Get started"})]}),e.jsx(p,{children:e.jsx("img",{src:j,alt:"smilling girl"})})]}),e.jsx(m,{children:e.jsxs(u,{children:[e.jsxs(n,{children:[e.jsx(i,{children:"32,000 + "}),e.jsx(r,{children:"Experienced tutors"})]}),e.jsxs(n,{children:[e.jsx(i,{children:"300,000 + "}),e.jsx(r,{children:"5-star tutor reviews"})]}),e.jsxs(n,{children:[e.jsx(i,{children:"120 + "}),e.jsx(r,{children:"Subjects taught"})]}),e.jsxs(n,{children:[e.jsx(i,{children:"200 + "}),e.jsx(r,{children:"Tutor nationalities"})]})]})})]})};export{f as default};
