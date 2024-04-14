@@ -68,9 +68,7 @@ export const TeacherCard = ({ teacher }) => {
 
   const toggleFavorite = (teacher) => {
     if (isFavorite) {
-      if (teacher.owner === user.uid) {
-        dispatch(removeFromFavorites(teacher));
-      }
+      dispatch(removeFromFavorites(teacher));
     } else {
       dispatch(addToFavorites({ ...teacher, owner: user.uid }));
     }
