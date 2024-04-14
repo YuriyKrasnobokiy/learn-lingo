@@ -1,4 +1,4 @@
-import{u as s,c as o,e as n,j as e}from"./index-6leht5dD.js";import{s as c,T as m,a as l}from"./TeacherCard-C2MeOfP9.js";const p="/learn-lingo/assets/empty-favorite-S6TsBk7o.svg",x=s.div`
+import{u as s,c as o,e as n,j as e}from"./index-C7S42iqj.js";import{s as c,T as m,a as l}from"./TeacherCard-CS0PzKHX.js";const p="/learn-lingo/assets/empty-favorite-S6TsBk7o.svg",x=s.div`
   display: flex;
   flex-direction: column;
   align-items: center;
