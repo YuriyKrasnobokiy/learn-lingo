@@ -93,7 +93,7 @@ export const Filters = () => {
   return (
     <FiltersWrapper>
       <SelectWrapper>
-        <SelectLabel>Car brand</SelectLabel>
+        <SelectLabel>Language</SelectLabel>
         <Select
           placeholder="Choose a language"
           name="languageFilter"

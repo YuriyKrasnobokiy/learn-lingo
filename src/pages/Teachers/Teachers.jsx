@@ -19,7 +19,6 @@ const Teachers = () => {
     const dataFetch = onValue(dbRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        console.log("Updated data:", data);
         setTeachers(Object.values(data));
       }
     });
@@ -35,10 +34,6 @@ const Teachers = () => {
   const handleLoadMore = () => {
     setCount((prevCount) => prevCount + teachersPerPage);
   };
-
-  // const filteredTeachers = visibleTeachers.filter((teacher) =>
-  //   teacher.language.toLowerCase().includes(filterWord.toLowerCase()),
-  // );
 
   const filteredTeachers = visibleTeachers.filter((teacher) =>
     filterWord

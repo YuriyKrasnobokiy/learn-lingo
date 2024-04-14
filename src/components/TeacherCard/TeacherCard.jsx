@@ -41,10 +41,7 @@ import { auth } from "../../firebase";
 
 export const TeacherCard = ({ teacher }) => {
   const [expandedTeacherId, setExpandedTeacherId] = useState(null);
-  ////////////////////////
   const dispatch = useDispatch();
-  /////
-  ///
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -60,9 +57,6 @@ export const TeacherCard = ({ teacher }) => {
     return () => unsubscribe();
   }, []);
 
-  ///
-  /////
-
   const selectedTeachersIds = useSelector(selectToggleSelectedTeachers);
   const isFavorite = selectedTeachersIds.includes(teacher.id);
   const user = auth.currentUser;
@@ -75,7 +69,7 @@ export const TeacherCard = ({ teacher }) => {
     }
     dispatch(toggleSelectedTeacher(teacher.id));
   };
-  /////////////////////////////
+
   const handleReadMore = (teacherId) => {
     setExpandedTeacherId(teacherId === expandedTeacherId ? null : teacherId);
   };

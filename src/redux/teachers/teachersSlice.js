@@ -4,8 +4,6 @@ const teachersSlice = createSlice({
   name: "teachers",
   initialState: {
     favoriteTeachers: [],
-    // isLoading: false,
-    // error: null,
     selectedTeachersIds: [],
     loginedUsers: [],
   },

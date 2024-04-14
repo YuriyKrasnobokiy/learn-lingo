@@ -51,12 +51,7 @@ export const TextBlockBtn = styled.button`
   }
 `;
 
-export const HomeImgBlock = styled.div`
-  /* width: 568px;
-  height: 530px;
-  border-radius: 30px;
-  background-color: ${(props) => props.theme.colors.HomeImgBlkBGC}; */
-`;
+export const HomeImgBlock = styled.div``;
 
 export const StatsBlock = styled.div`
   padding: 40px 0;

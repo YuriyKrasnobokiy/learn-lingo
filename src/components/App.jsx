@@ -126,14 +126,6 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/teachers" element={<Teachers />}></Route>
-            {/* <Route
-              path="/favorites"
-              element={
-                <PrivateRoute>
-                  <Favorites />
-                </PrivateRoute>
-              }
-            /> */}
             <Route path="/favorites" element={<Favorites />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

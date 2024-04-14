@@ -1,4 +1,3 @@
-// import { RegisterForm } from "../RegisterForm/RegisterForm";
 import { useEffect } from "react";
 import { CloseBtn, ModalOverlay, ModalStyled } from "./Modal.Styled";
 import { CgClose } from "react-icons/cg";
