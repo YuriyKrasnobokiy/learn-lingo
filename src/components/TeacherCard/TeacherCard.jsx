@@ -35,8 +35,9 @@ import {
 } from "../../redux/teachers/teachersSlice";
 import { selectToggleSelectedTeachers } from "../../redux/teachers/teachersSelectors";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../firebase";
+
 import toast from "react-hot-toast";
+import { auth } from "../../firebase";
 
 export const TeacherCard = ({ teacher }) => {
   const [expandedTeacherId, setExpandedTeacherId] = useState(null);

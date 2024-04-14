@@ -1,9 +1,10 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { auth } from "../firebase";
+
 import { Auth } from "../Auth/Auth";
 import { LogoutBtn, UserMenuStyled } from "./UserMenu.Styled";
 import { PiSignOutBold } from "react-icons/pi";
+import { auth } from "../../firebase";
 
 export const UserMenu = () => {
   const [authUser, setAuthUser] = useState(null);

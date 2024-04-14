@@ -12,7 +12,7 @@ import {
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../firebase";
 
 const schema = yup.object().shape({
   name: yup.string().min(2).required("Required"),

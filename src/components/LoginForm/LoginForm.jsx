@@ -14,9 +14,7 @@ import {
   StyledForm,
 } from "./LoginForm.Styled";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
-// import { selectLoginedUsers } from "../../redux/teachers/teachersSelectors";
-// import { addToLoginedUser } from "../../redux/teachers/teachersSlice";
+import { auth } from "../../firebase";
 
 const schema = yup.object().shape({
   email: yup.string().email("Invalid email").required("Required"),

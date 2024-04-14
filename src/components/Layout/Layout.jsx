@@ -12,9 +12,10 @@ import {
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import { UserMenu } from "../UserMenu/UserMenu";
 ///
-import { auth } from "../firebase";
+
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { auth } from "../../firebase";
 ///
 export const Layout = ({ children, toggleTheme, currentTheme }) => {
   ///
