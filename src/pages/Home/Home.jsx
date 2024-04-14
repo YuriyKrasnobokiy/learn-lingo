@@ -14,8 +14,15 @@ import {
   Wrapper,
 } from "./Home.styled";
 import smile from "../../assets/icons/smile.svg";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/teachers");
+  };
+
   return (
     <div className="container">
       <Wrapper>
@@ -32,7 +39,9 @@ const Home = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </TextBlockDescr>
-          <TextBlockBtn type="button">Get started</TextBlockBtn>
+          <TextBlockBtn type="button" onClick={handleClick}>
+            Get started
+          </TextBlockBtn>
         </HomeTextBlock>
         <HomeImgBlock>
           <img src={smile} alt="smilling girl" />
