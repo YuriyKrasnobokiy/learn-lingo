@@ -11,14 +11,10 @@ import {
 } from "../../components/Layout/Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
 import { UserMenu } from "../UserMenu/UserMenu";
-///
-
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { auth } from "../../firebase";
-///
 export const Layout = ({ children, toggleTheme, currentTheme }) => {
-  ///
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -34,7 +30,6 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
     return () => unsubscribe();
   }, []);
 
-  ///
   return (
     <>
       <header>

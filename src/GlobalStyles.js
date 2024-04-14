@@ -23,9 +23,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  /* h2 {
-    text-align: center;
-  } */
+  
 
   button {
     display: flex;

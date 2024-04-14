@@ -33,6 +33,7 @@ Users can add teachers to their favorites list for future reference.
 - Axios
 - Styled Components
 - React Hot Toast
+- Vite
 - Firebase
 
 ## Installation

@@ -6,6 +6,7 @@ export const EmptyFavoriteWrap = styled.div`
   align-items: center;
   max-width: 1312px;
   margin: 0 auto;
+  padding: 100px 0;
 `;
 
 export const FavoriteEmptyImg = styled.img`

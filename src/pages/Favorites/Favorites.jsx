@@ -13,9 +13,9 @@ import { auth } from "../../firebase";
 
 const Favorites = () => {
   const favoriteTeachers = useSelector(selectfavoriteTeachers);
-  const user = auth.currentUser.uid;
+  const user = auth.currentUser;
   const favoriteUserTeachers = favoriteTeachers.filter(
-    (teacher) => teacher.owner === user,
+    (teacher) => teacher.owner === user.uid,
   );
 
   return (

@@ -10,17 +10,18 @@ import {
   REGISTER,
 } from "redux-persist";
 import teachersSliceReducer from "./teachers/teachersSlice";
+import filtersSliceReducer from "./filters/filtersSlice";
 
 const teachersConfig = {
   key: "root",
   storage,
-  // whitelist: ['favoriteCars', 'selectedCarIds'],
   whitelist: ["favoriteTeachers", "selectedTeachersIds"],
 };
 
 export const store = configureStore({
   reducer: {
     teachersStore: persistReducer(teachersConfig, teachersSliceReducer),
+    filtersStore: filtersSliceReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

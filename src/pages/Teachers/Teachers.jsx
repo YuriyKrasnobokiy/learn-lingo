@@ -3,11 +3,15 @@ import { onValue, ref } from "firebase/database";
 import { LoadMoreBtn, TeachersWrap } from "./Teachers.styled";
 import { TeacherCard } from "../../components/TeacherCard/TeacherCard";
 import { db } from "../../firebase";
+import { Filters } from "../../components/Filters/Filters";
+import { useSelector } from "react-redux";
+import { selectFilterWord } from "../../redux/filters/filtersSelectors";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
   const [visibleTeachers, setVisibleTeachers] = useState([]);
   const [count, setCount] = useState(4);
+  const filterWord = useSelector(selectFilterWord);
   const teachersPerPage = 4;
 
   useEffect(() => {
@@ -32,11 +36,24 @@ const Teachers = () => {
     setCount((prevCount) => prevCount + teachersPerPage);
   };
 
+  // const filteredTeachers = visibleTeachers.filter((teacher) =>
+  //   teacher.language.toLowerCase().includes(filterWord.toLowerCase()),
+  // );
+
+  const filteredTeachers = visibleTeachers.filter((teacher) =>
+    filterWord
+      ? teacher.languages.some((language) =>
+          language.toLowerCase().includes(filterWord.toLowerCase()),
+        )
+      : true,
+  );
+
   return (
     <>
       <TeachersWrap>
+        <Filters />
         <ul>
-          {visibleTeachers.map((teacher) => (
+          {filteredTeachers.map((teacher) => (
             <TeacherCard key={teacher.id} teacher={teacher} />
           ))}
         </ul>
