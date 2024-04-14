@@ -1,4 +1,4 @@
-import{u as o,a as c,j as e}from"./index-BM8S50LQ.js";const l=o.div`
+import{u as o,a as c,j as e}from"./index-O-LMkEQx.js";const l=o.div`
   display: grid;
   grid-template-columns: 1fr 568px;
   gap: 24px;
@@ -6,13 +6,13 @@ import{u as o,a as c,j as e}from"./index-BM8S50LQ.js";const l=o.div`
   padding: 98px 108px 98px 64px;
   border-radius: 30px;
   background-color: ${t=>t.theme.colors.HomeTextBlkBGC};
-`,d=o.h1`
+`,x=o.h1`
   font-weight: 500;
   font-size: 48px;
   line-height: 1.16667;
   letter-spacing: -0.02em;
   margin-bottom: 32px;
-`,x=o.span`
+`,d=o.span`
   color: ${t=>t.theme.colors.HomeAccentText};
   border-radius: 14px;
   background-color: ${t=>t.theme.colors.thirdAccentColor};
@@ -37,12 +37,7 @@ import{u as o,a as c,j as e}from"./index-BM8S50LQ.js";const l=o.div`
   &:hover {
     background-color: ${t=>t.theme.colors.secondAccentColor};
   }
-`,p=o.div`
-  /* width: 568px;
-  height: 530px;
-  border-radius: 30px;
-  background-color: ${t=>t.theme.colors.HomeImgBlkBGC}; */
-`,m=o.div`
+`,p=o.div``,m=o.div`
   padding: 40px 0;
   border: 1.5px dashed ${t=>t.theme.colors.accentColor};
   border-radius: 30px;
@@ -59,17 +54,17 @@ import{u as o,a as c,j as e}from"./index-BM8S50LQ.js";const l=o.div`
   &:not(:last-child) {
     margin-right: 100px;
   }
-`,r=o.p`
+`,i=o.p`
   font-weight: 500;
   font-size: 28px;
   line-height: 1.14;
   letter-spacing: -0.02em;
   margin-right: 16px;
-`,i=o.p`
+`,s=o.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28;
   letter-spacing: -0.02em;
   max-width: 92px;
   color: ${t=>t.theme.colors.StatsDescrColor};
-`,j="/learn-lingo/assets/smile-C_OMyEqn.svg",f=()=>{const t=c(),s=()=>{t("/teachers")};return e.jsxs("div",{className:"container",children:[e.jsxs(l,{children:[e.jsxs(a,{children:[e.jsxs(d,{children:["Unlock your potential with the best"," ",e.jsx(x,{children:e.jsx("i",{children:"language"})})," ","tutors"]}),e.jsx(h,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),e.jsx(g,{type:"button",onClick:s,children:"Get started"})]}),e.jsx(p,{children:e.jsx("img",{src:j,alt:"smilling girl"})})]}),e.jsx(m,{children:e.jsxs(u,{children:[e.jsxs(n,{children:[e.jsx(r,{children:"32,000 + "}),e.jsx(i,{children:"Experienced tutors"})]}),e.jsxs(n,{children:[e.jsx(r,{children:"300,000 + "}),e.jsx(i,{children:"5-star tutor reviews"})]}),e.jsxs(n,{children:[e.jsx(r,{children:"120 + "}),e.jsx(i,{children:"Subjects taught"})]}),e.jsxs(n,{children:[e.jsx(r,{children:"200 + "}),e.jsx(i,{children:"Tutor nationalities"})]})]})})]})};export{f as default};
+`,j="/learn-lingo/assets/smile-C_OMyEqn.svg",f=()=>{const t=c(),r=()=>{t("/teachers")};return e.jsxs("div",{className:"container",children:[e.jsxs(l,{children:[e.jsxs(a,{children:[e.jsxs(x,{children:["Unlock your potential with the best"," ",e.jsx(d,{children:e.jsx("i",{children:"language"})})," ","tutors"]}),e.jsx(h,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."}),e.jsx(g,{type:"button",onClick:r,children:"Get started"})]}),e.jsx(p,{children:e.jsx("img",{src:j,alt:"smilling girl"})})]}),e.jsx(m,{children:e.jsxs(u,{children:[e.jsxs(n,{children:[e.jsx(i,{children:"32,000 + "}),e.jsx(s,{children:"Experienced tutors"})]}),e.jsxs(n,{children:[e.jsx(i,{children:"300,000 + "}),e.jsx(s,{children:"5-star tutor reviews"})]}),e.jsxs(n,{children:[e.jsx(i,{children:"120 + "}),e.jsx(s,{children:"Subjects taught"})]}),e.jsxs(n,{children:[e.jsx(i,{children:"200 + "}),e.jsx(s,{children:"Tutor nationalities"})]})]})})]})};export{f as default};
