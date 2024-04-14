@@ -19,7 +19,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
+  const handleStartClick = () => {
     navigate("/teachers");
   };
 
@@ -39,7 +39,7 @@ const Home = () => {
             Elevate your language proficiency to new heights by connecting with
             highly qualified and experienced tutors.
           </TextBlockDescr>
-          <TextBlockBtn type="button" onClick={handleClick}>
+          <TextBlockBtn type="button" onClick={handleStartClick}>
             Get started
           </TextBlockBtn>
         </HomeTextBlock>

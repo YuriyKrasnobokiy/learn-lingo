@@ -1,19 +1,48 @@
-# React + Vite my template
+# Project "Learn lingo"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Learn lingo is a platform that helps users find qualified foreign language teachers according to their needs and requirements. The site offers a wide selection of teachers with different levels of experience and specializations.
 
-# How to use this template
+## Key Features
 
-- Tap the «Use this template» button and choose «Create a new repository» option
-- Settings -> Actions -> General -> Workflow permissions ->
-  - ✔ Read and write permissions
-  - ✔ Allow GitHub Actions to create and approve pull requests
-- Change basename in main.jsx
-- Change repository name in vit.config.js
-- Change repository name in package.json (homepage and build)
-- Install dependencies with the command «npm install»
+- Search for teachers by language
 
-Currently, two official plugins are available:
+Users can search for teachers by the language they teach, using a convenient search interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Teacher profiles
+
+Each teacher has their own individual profile, which provides detailed information about their experience, education, teaching methods, and reviews from students.
+
+- Booking a trial lesson
+
+Users can book a trial lesson with a selected teacher directly through the website.
+
+- User registration
+
+Users can create an account on the site for convenient use of all platform features.
+
+- Adding teachers to favorites
+
+Users can add teachers to their favorites list for future reference.
+
+## Used technologies
+
+- React
+- React Dom
+- Redux Toolkit
+- Redux Persist
+- Axios
+- Styled Components
+- React Hot Toast
+- Firebase
+
+## Installation
+
+- Clone this repository using the command<br> _git clone
+  https://github.com/YuriyKrasnobokiy/learn-lingo.git_
+
+- Install dependencies using the command<br> _npm i_
+
+- Start this project using the command<br> _npm run dev_
+
+- If the browser did not launch automatically, paste this into the address
+  bar:<br> _http://localhost:3000/learn-lingo_
