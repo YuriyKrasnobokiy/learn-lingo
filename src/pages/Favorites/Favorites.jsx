@@ -9,7 +9,7 @@ import {
   FavoriteEmptyImg,
   FavoriteEmptyText,
 } from "./Favorites.Styled";
-import { auth } from "../../components/firebase";
+import { auth } from "../../firebase";
 
 const Favorites = () => {
   const favoriteTeachers = useSelector(selectfavoriteTeachers);

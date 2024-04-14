@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { onValue, ref } from "firebase/database";
-import { db } from "../../components/firebase";
-// import { Loader } from "../../components/Loader/Loader";
 import { LoadMoreBtn, TeachersWrap } from "./Teachers.styled";
 import { TeacherCard } from "../../components/TeacherCard/TeacherCard";
+import { db } from "../../firebase";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
