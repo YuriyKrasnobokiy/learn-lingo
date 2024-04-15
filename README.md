@@ -47,3 +47,7 @@ Users can add teachers to their favorites list for future reference.
 
 - If the browser did not launch automatically, paste this into the address
   bar:<br> _http://localhost:3000/learn-lingo_
+
+## Technical Task
+
+https://docs.google.com/document/d/1ZB_MFgnnJj7t7OXtv5hESSwY6xRgVoACZKzgZczWc3Y/edit
