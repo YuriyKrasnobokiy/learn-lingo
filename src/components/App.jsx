@@ -56,6 +56,7 @@ export const themes = {
       modalTrialTextInputColor: "#121417",
       TrialFormTitleColor: "#121417",
       TrialFormRadioOptColor: "#121417",
+      filterLabelColor: "#8a8a89",
     },
   },
   dark: {
@@ -102,6 +103,7 @@ export const themes = {
       modalTrialTextInputColor: "#121417",
       TrialFormTitleColor: "#121417",
       TrialFormRadioOptColor: "#121417",
+      filterLabelColor: "#8a8a89",
     },
   },
 };

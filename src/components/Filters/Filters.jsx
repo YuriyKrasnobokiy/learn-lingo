@@ -23,9 +23,10 @@ const options = [
 const customStyles = {
   control: (provided) => ({
     ...provided,
-    backgroundColor: "#f7f7fb",
+    backgroundColor: "#fff",
     borderRadius: "14px",
     padding: "6px",
+    borderColor: "#fff",
   }),
   menu: (provided) => ({
     ...provided,
