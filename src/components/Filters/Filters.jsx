@@ -11,7 +11,6 @@ const options = [
   { value: "french", label: "French" },
   { value: "english", label: "English" },
   { value: "german", label: "German" },
-  { value: "german", label: "German" },
   { value: "ukrainian", label: "Ukrainian" },
   { value: "polish", label: "Polish" },
   { value: "spanish", label: "Spanish" },
@@ -56,8 +55,8 @@ const customStyles = {
     color: state.isFocused ? "#121417" : "rgba(18, 20, 23, 0.2)",
     backgroundColor: "transparent",
     fontWeight: 500,
-    fontSize: "16px",
-    lineHeight: 1.25,
+    fontSize: "18px",
+    lineHeight: 1.11,
   }),
   indicatorSeparator: () => ({
     display: "none",

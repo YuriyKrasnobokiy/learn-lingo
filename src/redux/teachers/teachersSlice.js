@@ -5,7 +5,6 @@ const teachersSlice = createSlice({
   initialState: {
     favoriteTeachers: [],
     selectedTeachersIds: [],
-    loginedUsers: [],
   },
 
   reducers: {
