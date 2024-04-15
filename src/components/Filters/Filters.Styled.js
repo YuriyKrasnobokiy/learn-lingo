@@ -5,7 +5,7 @@ export const FiltersWrapper = styled.div`
   justify-content: flex-start;
   align-items: flex-end;
   max-width: 1312px;
-  padding: 0 24px 36px;
+  padding: 0 64px 36px;
 `;
 
 export const SelectWrapper = styled.div`

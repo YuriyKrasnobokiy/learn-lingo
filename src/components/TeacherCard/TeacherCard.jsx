@@ -116,7 +116,11 @@ export const TeacherCard = ({ teacher }) => {
             </TeacherStatsList>
 
             <TeacherHeartButton type="button" onClick={handleFavoriteClick}>
-              {isFavorite ? <VscHeartFilled /> : <VscHeart />}
+              {isFavorite && isAuthenticated ? (
+                <VscHeartFilled />
+              ) : (
+                <VscHeart />
+              )}
             </TeacherHeartButton>
           </TeacherStatsWrap>
 
