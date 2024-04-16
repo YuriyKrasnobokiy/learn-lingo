@@ -25,7 +25,6 @@ export const UserMenu = () => {
   const userSignOut = () => {
     signOut(auth)
       .then(() => console.log("Successfully signed out"))
-
       .catch((error) => console.log(error));
   };
 

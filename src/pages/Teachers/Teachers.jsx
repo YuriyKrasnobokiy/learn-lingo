@@ -11,6 +11,12 @@ import { db } from "../../firebase";
 import { Filters } from "../../components/Filters/Filters";
 import { useSelector } from "react-redux";
 import { selectFilterWord } from "../../redux/filters/filtersSelectors";
+import empty from "../../assets/empty-favorite.svg";
+import {
+  EmptyFavoriteWrap,
+  FavoriteEmptyImg,
+  FavoriteEmptyText,
+} from "../Favorites/Favorites.Styled";
 
 const Teachers = () => {
   const [teachers, setTeachers] = useState([]);
@@ -53,12 +59,21 @@ const Teachers = () => {
       <TeachersWrap>
         <TeachersListWrap>
           <Filters />
-          <TeachersList>
-            {filteredTeachers.map((teacher) => (
-              <TeacherCard key={teacher.id} teacher={teacher} />
-            ))}
-          </TeachersList>
-          {count <= visibleTeachers.length && (
+          {filteredTeachers.length > 0 ? (
+            <TeachersList>
+              {filteredTeachers.map((teacher) => (
+                <TeacherCard key={teacher.id} teacher={teacher} />
+              ))}
+            </TeachersList>
+          ) : (
+            <EmptyFavoriteWrap>
+              <FavoriteEmptyImg src={empty} alt="empty" />
+              <FavoriteEmptyText>
+                Oops! No teachers matching your request....
+              </FavoriteEmptyText>
+            </EmptyFavoriteWrap>
+          )}
+          {count <= visibleTeachers.length && filteredTeachers.length > 0 && (
             <LoadMoreBtn type="button" onClick={handleLoadMore}>
               Load More
             </LoadMoreBtn>
