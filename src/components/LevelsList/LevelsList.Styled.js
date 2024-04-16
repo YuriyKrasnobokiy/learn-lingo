@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const LevelsListStyled = styled.ul`
   display: flex;
+  flex-wrap: wrap;
 `;
 
 export const LevelsListItem = styled.li`

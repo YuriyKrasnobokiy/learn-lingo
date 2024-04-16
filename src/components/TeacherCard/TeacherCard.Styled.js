@@ -9,6 +9,10 @@ export const TeacherCardStyled = styled.li`
   &:not(:last-child) {
     margin-bottom: 32px;
   }
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
 `;
 
 // -------------AVATAR---------- //
@@ -39,17 +43,26 @@ export const PreTitle = styled.p`
   line-height: 1.5;
   color: ${(props) => props.theme.colors.teacherPretitleColor};
   margin-right: 176px;
+
+  @media screen and (max-width: 1023px) {
+    margin-right: 50px;
+  }
 `;
 
 export const TeacherStatsWrap = styled.div`
   display: flex;
   margin-bottom: 8px;
   align-items: center;
+
+  @media screen and (max-width: 520px) {
+    flex-direction: column;
+  }
 `;
 
 export const TeacherStatsList = styled.ul`
   display: flex;
   margin-right: 64px;
+  flex-wrap: wrap;
 `;
 
 export const TeachersStatsLink = styled.li`
