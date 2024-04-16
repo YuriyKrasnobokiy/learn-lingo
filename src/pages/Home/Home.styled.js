@@ -4,6 +4,11 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 568px;
   gap: 24px;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 `;
 
 export const HomeTextBlock = styled.div`
@@ -65,6 +70,12 @@ export const StatsList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const StatsLi = styled.li`

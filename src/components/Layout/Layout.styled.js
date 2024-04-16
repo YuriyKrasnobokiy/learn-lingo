@@ -8,6 +8,7 @@ export const HeaderWrapper = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 `;
 
 export const LogoWrapperStyled = styled.div`
@@ -21,7 +22,7 @@ export const LogoTextStyled = styled.span`
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-left: 8px;
-  margin-right: 290px;
+  /* margin-right: 290px; */
 `;
 
 export const HeaderNav = styled.div`

@@ -67,10 +67,10 @@ const Teachers = () => {
             </TeachersList>
           ) : (
             <EmptyFavoriteWrap>
-              <FavoriteEmptyImg src={empty} alt="empty" />
               <FavoriteEmptyText>
                 Oops! No teachers matching your request....
               </FavoriteEmptyText>
+              <FavoriteEmptyImg src={empty} alt="empty" />
             </EmptyFavoriteWrap>
           )}
           {count <= visibleTeachers.length && filteredTeachers.length > 0 && (

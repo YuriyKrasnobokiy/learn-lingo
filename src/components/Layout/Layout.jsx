@@ -34,19 +34,18 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
     <>
       <header>
         <HeaderWrapper>
+          <LogoWrapperStyled>
+            <img src={UkraineIcon} alt="ukraine" />
+            <LogoTextStyled>LearnLingo</LogoTextStyled>
+          </LogoWrapperStyled>
+          {/* <div> */}
           <HeaderNav>
-            <LogoWrapperStyled>
-              <img src={UkraineIcon} alt="ukraine" />
-            </LogoWrapperStyled>
-            <div>
-              <LogoTextStyled>LearnLingo</LogoTextStyled>
-
-              <NavLinkStyled to="/">Home</NavLinkStyled>
-              <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
-              {isAuthenticated && (
-                <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
-              )}
-            </div>
+            <NavLinkStyled to="/">Home</NavLinkStyled>
+            <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
+            {isAuthenticated && (
+              <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
+            )}
+            {/* </div> */}
           </HeaderNav>
 
           <ThemeBtn type="button" onClick={toggleTheme}>
