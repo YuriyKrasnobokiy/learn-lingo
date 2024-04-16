@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectfavoriteTeachers } from "../../redux/teachers/teachersSelectors";
 import { TeacherCard } from "../../components/TeacherCard/TeacherCard";
@@ -14,6 +14,7 @@ import {
   FavoriteEmptyText,
 } from "./Favorites.Styled";
 import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Favorites = () => {
   const favoriteTeachers = useSelector(selectfavoriteTeachers);
@@ -21,6 +22,14 @@ const Favorites = () => {
   const favoriteUserTeachers = favoriteTeachers.filter(
     (teacher) => teacher.owner === user.uid,
   );
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   return (
     <>
