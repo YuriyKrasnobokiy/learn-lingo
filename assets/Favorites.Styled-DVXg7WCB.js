@@ -1,4 +1,4 @@
-import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r as p,M as W,d as _,n as G,c as H,h as b,p as P,q,t as N}from"./index-CsxgIUkM.js";const Pe=t.div`
+import{u as t,G as m,j as o,F as S,i as T,E as M,k as A,l as d,m as E,_ as L,r as p,M as W,d as _,n as G,c as H,h as b,p as P,q,t as N}from"./index-CUW8T7Gx.js";const Pe=t.div`
   background-color: ${e=>e.theme.colors.teachersBGColor};
 `,qe=t.div`
   display: flex;
@@ -34,6 +34,10 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
   &:not(:last-child) {
     margin-bottom: 32px;
   }
+
+  @media screen and (max-width: 1023px) {
+    flex-direction: column;
+  }
 `,Z=t.div`
   position: relative;
   margin-right: 48px;
@@ -52,13 +56,22 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
   line-height: 1.5;
   color: ${e=>e.theme.colors.teacherPretitleColor};
   margin-right: 176px;
+
+  @media screen and (max-width: 1023px) {
+    margin-right: 50px;
+  }
 `,Y=t.div`
   display: flex;
   margin-bottom: 8px;
   align-items: center;
+
+  @media screen and (max-width: 520px) {
+    flex-direction: column;
+  }
 `,J=t.ul`
   display: flex;
   margin-right: 64px;
+  flex-wrap: wrap;
 `,h=t.li`
   font-weight: 500;
   font-size: 16px;
@@ -70,7 +83,7 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
     border-right: 1px solid
       ${e=>e.theme.colors.teachersLiBorderColor};
   }
-`,T=t.div`
+`,w=t.div`
   display: flex;
   align-items: center;
 `,K=t.img`
@@ -174,7 +187,8 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
   }
 `,je="useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";let k=(e=21)=>{let r="",a=crypto.getRandomValues(new Uint8Array(e));for(;e--;)r+=je[a[e]&63];return r};function Ce(e){return m({tag:"svg",attr:{viewBox:"0 0 15 15",fill:"none"},child:[{tag:"path",attr:{fillRule:"evenodd",clipRule:"evenodd",d:"M0.877014 7.49988C0.877014 3.84219 3.84216 0.877045 7.49985 0.877045C11.1575 0.877045 14.1227 3.84219 14.1227 7.49988C14.1227 11.1575 11.1575 14.1227 7.49985 14.1227C3.84216 14.1227 0.877014 11.1575 0.877014 7.49988ZM7.49985 1.82704C4.36683 1.82704 1.82701 4.36686 1.82701 7.49988C1.82701 8.97196 2.38774 10.3131 3.30727 11.3213C4.19074 9.94119 5.73818 9.02499 7.50023 9.02499C9.26206 9.02499 10.8093 9.94097 11.6929 11.3208C12.6121 10.3127 13.1727 8.97172 13.1727 7.49988C13.1727 4.36686 10.6328 1.82704 7.49985 1.82704ZM10.9818 11.9787C10.2839 10.7795 8.9857 9.97499 7.50023 9.97499C6.01458 9.97499 4.71624 10.7797 4.01845 11.9791C4.97952 12.7272 6.18765 13.1727 7.49985 13.1727C8.81227 13.1727 10.0206 12.727 10.9818 11.9787ZM5.14999 6.50487C5.14999 5.207 6.20212 4.15487 7.49999 4.15487C8.79786 4.15487 9.84999 5.207 9.84999 6.50487C9.84999 7.80274 8.79786 8.85487 7.49999 8.85487C6.20212 8.85487 5.14999 7.80274 5.14999 6.50487ZM7.49999 5.10487C6.72679 5.10487 6.09999 5.73167 6.09999 6.50487C6.09999 7.27807 6.72679 7.90487 7.49999 7.90487C8.27319 7.90487 8.89999 7.27807 8.89999 6.50487C8.89999 5.73167 8.27319 5.10487 7.49999 5.10487Z",fill:"currentColor"},child:[]}]})(e)}const be=t.ul`
   display: flex;
-`,Te=t.li`
+  flex-wrap: wrap;
+`,we=t.li`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -189,14 +203,14 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
   &:first-child {
     background-color: ${e=>e.theme.colors.levelsListItemBGC};
   }
-`,I=({teacher:e})=>o.jsx(be,{children:e.levels.map(r=>o.jsxs(Te,{children:["#",r]},k()))}),Le=t.h2`
+`,I=({teacher:e})=>o.jsx(be,{children:e.levels.map(r=>o.jsxs(we,{children:["#",r]},k()))}),Te=t.h2`
   font-weight: 500;
   font-size: 40px;
   line-height: 1.2;
   letter-spacing: -0.02em;
   margin-bottom: 20px;
   color: ${e=>e.theme.colors.trialLessonTitleColor};
-`,we=t.p`
+`,Le=t.p`
   font-size: 16px;
   line-height: 1.37;
   color: ${e=>e.theme.colors.trialLessonDescrColor};
@@ -243,7 +257,7 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
   &:not(:last-child) {
     margin-bottom: 16px;
   }
-`,c=t(L)`
+`,c=t(T)`
   margin: 0;
   margin-right: 8px;
   width: 24px;
@@ -251,7 +265,7 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
 `,ze=t.div`
   max-width: 438px;
   margin-bottom: 40px;
-`,v=t(L)`
+`,v=t(T)`
   font-size: 16px;
   line-height: 1.375;
   width: 100%;
@@ -284,7 +298,7 @@ import{u as t,G as m,j as o,F as S,i as L,E as M,k as A,l as d,m as E,_ as w,r a
   }
 `,x=t(M)`
   color: ${e=>e.theme.colors.ErrorMessageColor};
-`,Me=A().shape({option:d().required("Please select an option"),name:d().min(2).required("Required"),email:d().email("Invalid email").required("Required"),phone:d().min(10,"Invalid phone number").required("Required")}),Ae=({openModal:e})=>{const r={option:"",name:"",email:"",phone:""},a=(i,{resetForm:n})=>{n(),e(),w.success(`Thank you ${i.name}! Our manager will call you soon 😊 Have a nice day 😉`,{duration:5e3})};return o.jsxs(o.Fragment,{children:[o.jsx(Be,{children:"What is your main reason for learning English?"}),o.jsx(E,{initialValues:r,validationSchema:Me,onSubmit:a,children:o.jsxs(Fe,{children:[o.jsxs(Re,{children:[o.jsx(x,{component:"p",name:"option"}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Career and business"}),"Career and business"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Lesson for kids"}),"Lesson for kids"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Living abroad"}),"Living abroad"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Exams and coursework"}),"Exams and coursework"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Culture, travel or hobby"}),"Culture, travel or hobby"]})]}),o.jsxs(ze,{children:[o.jsx(x,{component:"p",name:"name"}),o.jsx(v,{type:"text",name:"name",placeholder:"Full Name"}),o.jsx(x,{component:"p",name:"email"}),o.jsx(v,{type:"email",name:"email",placeholder:"Email"}),o.jsx(x,{component:"p",name:"phone"}),o.jsx(v,{type:"text",name:"phone",placeholder:"Phone number"})]}),o.jsx(Se,{type:"submit",children:"Book"})]})})]})},Ee=({teacher:e,openModal:r})=>o.jsxs(o.Fragment,{children:[o.jsx(Le,{children:"Book trial lesson"}),o.jsx(we,{children:"Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs."}),o.jsxs(ye,{children:[o.jsx(ke,{src:e.avatar_url,alt:"avatar"}),o.jsxs("div",{children:[o.jsx(Ie,{children:"Your teacher"}),o.jsxs($e,{children:[e.name," ",e.surname]})]})]}),o.jsx(Ae,{openModal:r})]}),We=({teacher:e})=>{const[r,a]=p.useState(!1),i=()=>{a(n=>!n)};return o.jsx(o.Fragment,{children:o.jsxs(le,{children:[o.jsx(ce,{children:e.experience}),o.jsx(de,{children:e.reviews.map(n=>o.jsxs(he,{children:[o.jsxs(xe,{children:[o.jsx(pe,{children:o.jsx(Ce,{})}),o.jsxs("div",{children:[o.jsx(me,{children:n.reviewer_name}),o.jsxs(ge,{children:[o.jsx("img",{src:y,alt:"star"}),o.jsx(ue,{children:n.reviewer_rating.toFixed(1)})]})]})]}),o.jsx(fe,{children:n.comment})]},k()))}),o.jsx(I,{teacher:e}),o.jsx(ve,{type:"button",onClick:i,children:"Book trial lesson"}),r&&o.jsx(W,{openModal:i,children:o.jsx(Ee,{teacher:e,openModal:i})})]})})},Ze=e=>e.teachersStore.favoriteTeachers,_e=e=>e.teachersStore.selectedTeachersIds,De=({teacher:e})=>{const[r,a]=p.useState(null),i=_(),[n,j]=p.useState(!1);p.useEffect(()=>{const s=G(b,z=>{j(!!z)});return()=>s()},[]);const C=H(_e).includes(e.id),$=b.currentUser,B=s=>{i(C?P(s):q({...s,owner:$.uid})),i(N(s.id))},F=s=>{a(s===r?null:s)},R=()=>{n?B(e):w.error("You must be logged in to add to favorites")};return o.jsx(o.Fragment,{children:o.jsxs(O,{children:[o.jsxs(Z,{children:[o.jsx(D,{src:e.avatar_url,alt:"avatar"}),o.jsx(V,{src:ne,alt:"online"})]}),o.jsxs("div",{children:[o.jsxs(Y,{children:[o.jsx(U,{children:"Langueges"}),o.jsxs(J,{className:"teacher-info",children:[o.jsx(h,{children:o.jsxs(T,{children:[o.jsx(ie,{style:{marginRight:"12px"}}),"Lessons online"]})}),o.jsxs(h,{children:["Lessons done: ",e.lessons_done]}),o.jsx(h,{children:o.jsxs(T,{children:[o.jsx(K,{src:y,alt:"star"}),"Rating: ",e.rating]})}),o.jsxs(h,{children:["Price / 1 hour:"," ",o.jsxs(Q,{children:[e.price_per_hour,"$"]})]})]}),o.jsx(X,{type:"button",onClick:R,children:C&&n?o.jsx(se,{}):o.jsx(ae,{})})]}),o.jsxs(ee,{children:[e.name," ",e.surname]}),o.jsxs(oe,{children:[o.jsx(g,{children:o.jsxs(u,{children:[o.jsx(f,{children:"Speaks: "}),o.jsx(te,{children:e.languages.join(", ")})]})}),o.jsx(g,{children:o.jsxs(u,{children:[o.jsx(f,{children:"Lesson Info: "}),e.lesson_info]})}),o.jsx(g,{children:o.jsxs(u,{children:[o.jsx(f,{children:"Conditions: "}),e.conditions]})})]}),r!==e.id&&o.jsxs(o.Fragment,{children:[o.jsx(re,{type:"button",onClick:()=>F(e.id),children:"Read more"}),o.jsx(I,{teacher:e})]}),r===e.id&&o.jsx(We,{teacher:e})]})]},e.id)})},Ve="/learn-lingo/assets/empty-favorite-S6TsBk7o.svg",Ue=t.div`
+`,Me=A().shape({option:d().required("Please select an option"),name:d().min(2).required("Required"),email:d().email("Invalid email").required("Required"),phone:d().min(10,"Invalid phone number").required("Required")}),Ae=({openModal:e})=>{const r={option:"",name:"",email:"",phone:""},a=(i,{resetForm:n})=>{n(),e(),L.success(`Thank you ${i.name}! Our manager will call you soon 😊 Have a nice day 😉`,{duration:5e3})};return o.jsxs(o.Fragment,{children:[o.jsx(Be,{children:"What is your main reason for learning English?"}),o.jsx(E,{initialValues:r,validationSchema:Me,onSubmit:a,children:o.jsxs(Fe,{children:[o.jsxs(Re,{children:[o.jsx(x,{component:"p",name:"option"}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Career and business"}),"Career and business"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Lesson for kids"}),"Lesson for kids"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Living abroad"}),"Living abroad"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Exams and coursework"}),"Exams and coursework"]}),o.jsxs(l,{children:[o.jsx(c,{type:"radio",name:"option",value:"Culture, travel or hobby"}),"Culture, travel or hobby"]})]}),o.jsxs(ze,{children:[o.jsx(x,{component:"p",name:"name"}),o.jsx(v,{type:"text",name:"name",placeholder:"Full Name"}),o.jsx(x,{component:"p",name:"email"}),o.jsx(v,{type:"email",name:"email",placeholder:"Email"}),o.jsx(x,{component:"p",name:"phone"}),o.jsx(v,{type:"text",name:"phone",placeholder:"Phone number"})]}),o.jsx(Se,{type:"submit",children:"Book"})]})})]})},Ee=({teacher:e,openModal:r})=>o.jsxs(o.Fragment,{children:[o.jsx(Te,{children:"Book trial lesson"}),o.jsx(Le,{children:"Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs."}),o.jsxs(ye,{children:[o.jsx(ke,{src:e.avatar_url,alt:"avatar"}),o.jsxs("div",{children:[o.jsx(Ie,{children:"Your teacher"}),o.jsxs($e,{children:[e.name," ",e.surname]})]})]}),o.jsx(Ae,{openModal:r})]}),We=({teacher:e})=>{const[r,a]=p.useState(!1),i=()=>{a(n=>!n)};return o.jsx(o.Fragment,{children:o.jsxs(le,{children:[o.jsx(ce,{children:e.experience}),o.jsx(de,{children:e.reviews.map(n=>o.jsxs(he,{children:[o.jsxs(xe,{children:[o.jsx(pe,{children:o.jsx(Ce,{})}),o.jsxs("div",{children:[o.jsx(me,{children:n.reviewer_name}),o.jsxs(ge,{children:[o.jsx("img",{src:y,alt:"star"}),o.jsx(ue,{children:n.reviewer_rating.toFixed(1)})]})]})]}),o.jsx(fe,{children:n.comment})]},k()))}),o.jsx(I,{teacher:e}),o.jsx(ve,{type:"button",onClick:i,children:"Book trial lesson"}),r&&o.jsx(W,{openModal:i,children:o.jsx(Ee,{teacher:e,openModal:i})})]})})},Ze=e=>e.teachersStore.favoriteTeachers,_e=e=>e.teachersStore.selectedTeachersIds,De=({teacher:e})=>{const[r,a]=p.useState(null),i=_(),[n,j]=p.useState(!1);p.useEffect(()=>{const s=G(b,z=>{j(!!z)});return()=>s()},[]);const C=H(_e).includes(e.id),$=b.currentUser,B=s=>{i(C?P(s):q({...s,owner:$.uid})),i(N(s.id))},F=s=>{a(s===r?null:s)},R=()=>{n?B(e):L.error("You must be logged in to add to favorites")};return o.jsx(o.Fragment,{children:o.jsxs(O,{children:[o.jsxs(Z,{children:[o.jsx(D,{src:e.avatar_url,alt:"avatar"}),o.jsx(V,{src:ne,alt:"online"})]}),o.jsxs("div",{children:[o.jsxs(Y,{children:[o.jsx(U,{children:"Langueges"}),o.jsxs(J,{className:"teacher-info",children:[o.jsx(h,{children:o.jsxs(w,{children:[o.jsx(ie,{style:{marginRight:"12px"}}),"Lessons online"]})}),o.jsxs(h,{children:["Lessons done: ",e.lessons_done]}),o.jsx(h,{children:o.jsxs(w,{children:[o.jsx(K,{src:y,alt:"star"}),"Rating: ",e.rating]})}),o.jsxs(h,{children:["Price / 1 hour:"," ",o.jsxs(Q,{children:[e.price_per_hour,"$"]})]})]}),o.jsx(X,{type:"button",onClick:R,children:C&&n?o.jsx(se,{}):o.jsx(ae,{})})]}),o.jsxs(ee,{children:[e.name," ",e.surname]}),o.jsxs(oe,{children:[o.jsx(g,{children:o.jsxs(u,{children:[o.jsx(f,{children:"Speaks: "}),o.jsx(te,{children:e.languages.join(", ")})]})}),o.jsx(g,{children:o.jsxs(u,{children:[o.jsx(f,{children:"Lesson Info: "}),e.lesson_info]})}),o.jsx(g,{children:o.jsxs(u,{children:[o.jsx(f,{children:"Conditions: "}),e.conditions]})})]}),r!==e.id&&o.jsxs(o.Fragment,{children:[o.jsx(re,{type:"button",onClick:()=>F(e.id),children:"Read more"}),o.jsx(I,{teacher:e})]}),r===e.id&&o.jsx(We,{teacher:e})]})]},e.id)})},Ve="/learn-lingo/assets/empty-favorite-S6TsBk7o.svg",Ue=t.div`
   display: flex;
   flex-direction: column;
   align-items: center;
