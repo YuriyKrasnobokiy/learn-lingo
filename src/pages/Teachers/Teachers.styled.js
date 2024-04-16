@@ -1,13 +1,15 @@
 import styled from "styled-components";
 
 export const TeachersWrap = styled.div`
+  background-color: ${(props) => props.theme.colors.teachersBGColor};
+`;
+
+export const TeachersListWrap = styled.div`
   display: flex;
   max-width: 1312px;
   flex-direction: column;
   padding: 96px 0;
-  /* align-items: center; */
   margin: 0 auto;
-  background-color: ${(props) => props.theme.colors.teachersBGColor};
 `;
 
 export const TeachersList = styled.ul`

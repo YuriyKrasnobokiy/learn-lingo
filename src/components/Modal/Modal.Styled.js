@@ -23,6 +23,8 @@ export const ModalStyled = styled.div`
   background: white;
   border-radius: 10px;
   cursor: auto;
+  max-height: 80vh;
+  overflow-y: auto;
 `;
 
 export const CloseBtn = styled.button`

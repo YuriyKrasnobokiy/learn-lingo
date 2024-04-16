@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { onValue, ref } from "firebase/database";
-import { LoadMoreBtn, TeachersList, TeachersWrap } from "./Teachers.styled";
+import {
+  LoadMoreBtn,
+  TeachersList,
+  TeachersListWrap,
+  TeachersWrap,
+} from "./Teachers.styled";
 import { TeacherCard } from "../../components/TeacherCard/TeacherCard";
 import { db } from "../../firebase";
 import { Filters } from "../../components/Filters/Filters";
@@ -46,17 +51,19 @@ const Teachers = () => {
   return (
     <>
       <TeachersWrap>
-        <Filters />
-        <TeachersList>
-          {filteredTeachers.map((teacher) => (
-            <TeacherCard key={teacher.id} teacher={teacher} />
-          ))}
-        </TeachersList>
-        {count <= visibleTeachers.length && (
-          <LoadMoreBtn type="button" onClick={handleLoadMore}>
-            Load More
-          </LoadMoreBtn>
-        )}
+        <TeachersListWrap>
+          <Filters />
+          <TeachersList>
+            {filteredTeachers.map((teacher) => (
+              <TeacherCard key={teacher.id} teacher={teacher} />
+            ))}
+          </TeachersList>
+          {count <= visibleTeachers.length && (
+            <LoadMoreBtn type="button" onClick={handleLoadMore}>
+              Load More
+            </LoadMoreBtn>
+          )}
+        </TeachersListWrap>
       </TeachersWrap>
     </>
   );

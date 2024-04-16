@@ -82,7 +82,7 @@ export const LoginForm = ({ openModal }) => {
             placeholder="Password"
           />
 
-          <StyledButton type="submit">Sign Up</StyledButton>
+          <StyledButton type="submit">Sign In</StyledButton>
         </StyledForm>
       </Formik>
       {error && <ErrorMessageStyled>{error}</ErrorMessageStyled>}

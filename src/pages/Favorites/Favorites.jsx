@@ -2,7 +2,11 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectfavoriteTeachers } from "../../redux/teachers/teachersSelectors";
 import { TeacherCard } from "../../components/TeacherCard/TeacherCard";
-import { TeachersList, TeachersWrap } from "../Teachers/Teachers.styled";
+import {
+  TeachersList,
+  TeachersListWrap,
+  TeachersWrap,
+} from "../Teachers/Teachers.styled";
 import empty from "../../assets/empty-favorite.svg";
 import {
   EmptyFavoriteWrap,
@@ -22,15 +26,17 @@ const Favorites = () => {
     <>
       {favoriteUserTeachers.length > 0 ? (
         <TeachersWrap>
-          <TeachersList>
-            {favoriteUserTeachers.map((teacher) => (
-              <TeacherCard
-                key={teacher.id}
-                teacher={teacher}
-                owner={teacher.owner}
-              />
-            ))}
-          </TeachersList>
+          <TeachersListWrap>
+            <TeachersList>
+              {favoriteUserTeachers.map((teacher) => (
+                <TeacherCard
+                  key={teacher.id}
+                  teacher={teacher}
+                  owner={teacher.owner}
+                />
+              ))}
+            </TeachersList>
+          </TeachersListWrap>
         </TeachersWrap>
       ) : (
         <>
