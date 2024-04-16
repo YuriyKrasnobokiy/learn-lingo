@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 568px;
+  /* grid-template-columns: 1fr 568px; */
+  grid-template-columns: repeat(auto-fill, minmax(568px, 1fr));
   gap: 24px;
 
   @media screen and (max-width: 768px) {
@@ -37,7 +38,7 @@ export const TextBlockDescr = styled.p`
   line-height: 1.375;
   letter-spacing: -0.02em;
   margin-bottom: 64px;
-  width: 471px;
+  max-width: 471px;
 `;
 
 export const TextBlockBtn = styled.button`
@@ -70,6 +71,8 @@ export const StatsList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  max-width: 100vw;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;

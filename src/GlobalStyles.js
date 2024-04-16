@@ -52,7 +52,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .container {
-  width: 1312px;
+  max-width: 1312px;
   margin: 0 auto;
   }
 `;
