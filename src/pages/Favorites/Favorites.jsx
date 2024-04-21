@@ -19,6 +19,7 @@ import { useNavigate } from "react-router-dom";
 const Favorites = () => {
   const favoriteTeachers = useSelector(selectfavoriteTeachers);
   const user = auth.currentUser;
+
   const favoriteUserTeachers = favoriteTeachers.filter(
     (teacher) => teacher.owner === user.uid,
   );

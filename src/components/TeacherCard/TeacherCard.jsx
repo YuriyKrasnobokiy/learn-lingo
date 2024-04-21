@@ -65,7 +65,7 @@ export const TeacherCard = ({ teacher }) => {
     if (isFavorite) {
       dispatch(removeFromFavorites(teacher));
     } else {
-      dispatch(addToFavorites({ ...teacher, owner: user.id }));
+      dispatch(addToFavorites({ ...teacher, owner: user.uid }));
     }
     dispatch(toggleSelectedTeacher(teacher.id));
   };

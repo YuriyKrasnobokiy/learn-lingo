@@ -9,8 +9,8 @@ const teachersSlice = createSlice({
 
   reducers: {
     addToFavorites(state, action) {
-      // const teacher = action.payload;
-      state.favoriteTeachers.push(action.payload);
+      const teacher = action.payload;
+      state.favoriteTeachers.push(teacher);
     },
     removeFromFavorites(state, action) {
       const teachersToRemove = action.payload;
