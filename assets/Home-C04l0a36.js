@@ -1,4 +1,4 @@
-import{u as n,a as c,j as e}from"./index-CUW8T7Gx.js";const l=n.div`
+import{u as n,a as c,j as e}from"./index-D9OO-uyo.js";const l=n.div`
   display: grid;
   /* grid-template-columns: 1fr 568px; */
   grid-template-columns: repeat(auto-fill, minmax(568px, 1fr));
