@@ -4,7 +4,6 @@ import { Loader } from "./Loader/Loader";
 import { Layout } from "../components/Layout/Layout";
 import GlobalStyles from "../GlobalStyles";
 import { ThemeProvider } from "styled-components";
-import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const Teachers = lazy(() => import("../pages/Teachers/Teachers"));
@@ -128,10 +127,6 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/teachers" element={<Teachers />}></Route>
-            {/* <Route
-              path="/favorite"
-              element={<PrivateRoute component={<Favorites />} />}
-            /> */}
             <Route path="/favorites" element={<Favorites />} />
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>

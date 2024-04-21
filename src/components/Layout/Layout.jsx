@@ -7,6 +7,7 @@ import {
   LogoTextStyled,
   LogoWrapperStyled,
   NavLinkStyled,
+  StyledHeader,
   ThemeBtn,
 } from "../../components/Layout/Layout.styled";
 import UkraineIcon from "../../assets/icons/ukraine.svg";
@@ -32,7 +33,7 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
 
   return (
     <>
-      <header>
+      <StyledHeader>
         <HeaderWrapper>
           <LogoWrapperStyled>
             <img src={UkraineIcon} alt="ukraine" />
@@ -55,7 +56,7 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
           </ThemeBtn>
           <UserMenu />
         </HeaderWrapper>
-      </header>
+      </StyledHeader>
       <main>{children}</main>
       <Toaster position="top-right" reverseOrder={false} />
     </>

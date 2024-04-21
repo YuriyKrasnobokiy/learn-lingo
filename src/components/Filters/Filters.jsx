@@ -22,30 +22,12 @@ const options = [
   { value: "french", label: "French" },
   { value: "english", label: "English" },
   { value: "german", label: "German" },
-  { value: "ukrainian", label: "Ukrainian" },
-  { value: "polish", label: "Polish" },
   { value: "spanish", label: "Spanish" },
   { value: "mandarin chinese", label: "Mandarin Chinese" },
   { value: "italian", label: "Italian" },
   { value: "korean", label: "Korean" },
-  { value: " vietnamese", label: " Vietnamese" },
+  { value: "vietnamese", label: " Vietnamese" },
 ];
-
-// const priceOptions = [
-//   { value: "25", label: "25" },
-//   { value: "27", label: "27" },
-//   { value: "28", label: "28" },
-//   { value: "30", label: "30" },
-//   { value: "32", label: "32" },
-//   { value: "35", label: "35" },
-// ];
-
-// const levelOptions = [
-//   { value: "beginner", label: "A1 Beginner" },
-//   { value: "elementary", label: "A2 Elementary" },
-//   { value: "intermediate", label: "B1 Intermediate" },
-//   { value: "upper-Intermediate", label: "B2 Upper-Intermediate" },
-// ];
 
 const customStyles = {
   control: (provided) => ({
@@ -112,17 +94,6 @@ export const Filters = ({ teachers }) => {
       return index === 0 || value !== array[index - 1];
     })
     .map((price) => ({ value: price.toString(), label: price.toString() }));
-
-  // useEffect(() => {
-  //   const language = searchParams.get("language");
-  //   const price = searchParams.get("price");
-  //   if (language) {
-  //     setSelectedOption(options.find((option) => option.value === language));
-  //   }
-  //   if (price) {
-  //     setSelectedPrice(priceOptions.find((price) => price.value === price));
-  //   }
-  // }, [searchParams, priceOptions]);
 
   useEffect(() => {
     const language = searchParams.get("language");
