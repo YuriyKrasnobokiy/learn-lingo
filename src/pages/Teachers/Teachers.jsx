@@ -10,7 +10,10 @@ import { TeacherCard } from "../../components/TeacherCard/TeacherCard";
 import { db } from "../../firebase";
 import { Filters } from "../../components/Filters/Filters";
 import { useSelector } from "react-redux";
-import { selectFilterWord } from "../../redux/filters/filtersSelectors";
+import {
+  selectFilterPrice,
+  selectFilterWord,
+} from "../../redux/filters/filtersSelectors";
 import empty from "../../assets/empty-favorite.svg";
 import {
   EmptyFavoriteWrap,
@@ -23,6 +26,7 @@ const Teachers = () => {
   const [visibleTeachers, setVisibleTeachers] = useState([]);
   const [count, setCount] = useState(4);
   const filterWord = useSelector(selectFilterWord);
+  const filterPrice = useSelector(selectFilterPrice);
   const teachersPerPage = 4;
 
   useEffect(() => {
@@ -46,19 +50,32 @@ const Teachers = () => {
     setCount((prevCount) => prevCount + teachersPerPage);
   };
 
-  const filteredTeachers = visibleTeachers.filter((teacher) =>
-    filterWord
+  const filteredTeachers = visibleTeachers.filter((teacher) => {
+    const languageMatch = filterWord
       ? teacher.languages.some((language) =>
           language.toLowerCase().includes(filterWord.toLowerCase()),
         )
-      : true,
-  );
+      : true;
+
+    const priceMatch = filterPrice
+      ? teacher.price_per_hour === parseFloat(filterPrice)
+      : true;
+    return languageMatch && priceMatch;
+  });
+
+  // const filteredTeachers = visibleTeachers.filter((teacher) =>
+  //   filterWord
+  //     ? teacher.languages.some((language) =>
+  //         language.toLowerCase().includes(filterWord.toLowerCase()),
+  //       )
+  //     : teachers,
+  // );
 
   return (
     <>
       <TeachersWrap>
         <TeachersListWrap>
-          <Filters />
+          <Filters teachers={teachers} />
           {filteredTeachers.length > 0 ? (
             <TeachersList>
               {filteredTeachers.map((teacher) => (

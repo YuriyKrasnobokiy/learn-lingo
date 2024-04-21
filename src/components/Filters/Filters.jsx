@@ -2,12 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import Select from "react-select";
-import { FiltersWrapper, SelectLabel, SelectWrapper } from "./Filters.Styled";
-import { selectFilterWord } from "../../redux/filters/filtersSelectors";
-import { setFilterWord } from "../../redux/filters/filtersSlice";
+import {
+  FiltersWrapper,
+  ResetButton,
+  SelectLabel,
+  SelectPriceWrapper,
+  SelectWrapper,
+} from "./Filters.Styled";
+import {
+  selectFilterPrice,
+  selectFilterWord,
+} from "../../redux/filters/filtersSelectors";
+import {
+  setFilterPrice,
+  setFilterWord,
+} from "../../redux/filters/filtersSlice";
 
 const options = [
-  { value: "", label: "All teachers" },
   { value: "french", label: "French" },
   { value: "english", label: "English" },
   { value: "german", label: "German" },
@@ -19,6 +30,22 @@ const options = [
   { value: "korean", label: "Korean" },
   { value: " vietnamese", label: " Vietnamese" },
 ];
+
+// const priceOptions = [
+//   { value: "25", label: "25" },
+//   { value: "27", label: "27" },
+//   { value: "28", label: "28" },
+//   { value: "30", label: "30" },
+//   { value: "32", label: "32" },
+//   { value: "35", label: "35" },
+// ];
+
+// const levelOptions = [
+//   { value: "beginner", label: "A1 Beginner" },
+//   { value: "elementary", label: "A2 Elementary" },
+//   { value: "intermediate", label: "B1 Intermediate" },
+//   { value: "upper-Intermediate", label: "B2 Upper-Intermediate" },
+// ];
 
 const customStyles = {
   control: (provided) => ({
@@ -71,39 +98,120 @@ const customStyles = {
     cursor: "pointer",
   }),
 };
-export const Filters = () => {
+export const Filters = ({ teachers }) => {
   const filterWord = useSelector(selectFilterWord);
+  const filterPrice = useSelector(selectFilterPrice);
   const [selectedOption, setSelectedOption] = useState(filterWord);
+  const [selectedPrice, setSelectedPrice] = useState(filterPrice);
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
+  const priceOptions = teachers
+    .map((teacher) => teacher.price_per_hour)
+    .sort((a, b) => a - b)
+    .filter((value, index, array) => {
+      return index === 0 || value !== array[index - 1];
+    })
+    .map((price) => ({ value: price.toString(), label: price.toString() }));
+
+  // useEffect(() => {
+  //   const language = searchParams.get("language");
+  //   const price = searchParams.get("price");
+  //   if (language) {
+  //     setSelectedOption(options.find((option) => option.value === language));
+  //   }
+  //   if (price) {
+  //     setSelectedPrice(priceOptions.find((price) => price.value === price));
+  //   }
+  // }, [searchParams, priceOptions]);
 
   useEffect(() => {
     const language = searchParams.get("language");
-    if (language) {
-      setSelectedOption(options.find((option) => option.value === language));
-    }
-  }, [searchParams]);
+    const price = searchParams.get("price");
 
-  const onChange = (selectedOption) => {
+    if (language) {
+      const selectedLanguage = options.find(
+        (option) => option.value === language,
+      );
+      setSelectedOption(selectedLanguage);
+      dispatch(setFilterWord(selectedLanguage?.value || ""));
+    }
+
+    if (price) {
+      const selectedPriceOption = priceOptions.find(
+        (option) => option.value === price,
+      );
+      setSelectedPrice(selectedPriceOption);
+      dispatch(setFilterPrice(selectedPriceOption?.value || ""));
+    }
+  }, [searchParams, dispatch]);
+
+  const updateSearchParams = (selectedLanguage, selectedPrice) => {
+    const params = new URLSearchParams();
+
+    if (selectedLanguage) {
+      params.set("language", selectedLanguage);
+    }
+    if (selectedPrice) {
+      params.set("price", selectedPrice);
+    }
+
+    setSearchParams(params);
+  };
+
+  const onLangChange = (selectedOption) => {
     setSelectedOption(selectedOption);
     setSearchParams({ languages: selectedOption?.value || "" });
     dispatch(setFilterWord(selectedOption?.value || ""));
+    updateSearchParams(selectedOption?.value, selectedPrice?.value);
+  };
+
+  const onPriceChange = (selectedPrice) => {
+    setSelectedPrice(selectedPrice);
+    setSearchParams({ price: selectedPrice?.value || "" });
+    dispatch(setFilterPrice(selectedPrice?.value || ""));
+    updateSearchParams(selectedOption?.value, selectedPrice?.value);
+  };
+
+  const onReset = () => {
+    setSelectedOption("");
+    setSelectedPrice("");
+    dispatch(setFilterWord(""));
+    dispatch(setFilterPrice(""));
+    setSearchParams({});
   };
 
   return (
-    <FiltersWrapper>
-      <SelectWrapper>
-        <SelectLabel>Language</SelectLabel>
-        <Select
-          placeholder="Choose a language"
-          name="languageFilter"
-          id="language_filter"
-          styles={customStyles}
-          options={options}
-          value={selectedOption}
-          onChange={onChange}
-        ></Select>
-      </SelectWrapper>
-    </FiltersWrapper>
+    <>
+      <FiltersWrapper>
+        <SelectWrapper>
+          <SelectLabel>Language</SelectLabel>
+          <Select
+            placeholder="Language "
+            name="languageFilter"
+            id="language_filter"
+            styles={customStyles}
+            options={options}
+            value={selectedOption}
+            onChange={onLangChange}
+          ></Select>
+        </SelectWrapper>
+
+        <SelectPriceWrapper>
+          <SelectLabel>Price per hour</SelectLabel>
+          <Select
+            placeholder="Price"
+            name="priceFilter"
+            id="price-filter"
+            styles={customStyles}
+            options={priceOptions}
+            value={selectedPrice}
+            onChange={onPriceChange}
+          ></Select>
+        </SelectPriceWrapper>
+        <ResetButton type="button" onClick={onReset}>
+          Reset
+        </ResetButton>
+      </FiltersWrapper>
+    </>
   );
 };

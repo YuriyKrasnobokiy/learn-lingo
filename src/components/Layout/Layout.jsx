@@ -38,14 +38,12 @@ export const Layout = ({ children, toggleTheme, currentTheme }) => {
             <img src={UkraineIcon} alt="ukraine" />
             <LogoTextStyled>LearnLingo</LogoTextStyled>
           </LogoWrapperStyled>
-          {/* <div> */}
           <HeaderNav>
             <NavLinkStyled to="/">Home</NavLinkStyled>
             <NavLinkStyled to="/teachers">Teachers</NavLinkStyled>
             {isAuthenticated && (
               <NavLinkStyled to="/favorites">Favorites</NavLinkStyled>
             )}
-            {/* </div> */}
           </HeaderNav>
 
           <ThemeBtn type="button" onClick={toggleTheme}>

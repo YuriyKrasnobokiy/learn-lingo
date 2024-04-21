@@ -1,8 +1,8 @@
 import { Navigate } from "react-router-dom";
-import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase";
 
-const PrivateRoute = ({ children, redirectedTo = "/learn-lingo" }) => {
+const PrivateRoute = ({ component, redirectedTo = "/learn-lingo" }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const PrivateRoute = ({ children, redirectedTo = "/learn-lingo" }) => {
     return () => unsubscribe();
   }, []);
 
-  return isAuthenticated ? children : <Navigate to={redirectedTo} />;
+  return isAuthenticated ? <Navigate to={redirectedTo} /> : component;
 };
 
 export default PrivateRoute;

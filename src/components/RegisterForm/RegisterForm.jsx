@@ -81,7 +81,7 @@ export const RegisterForm = ({ openModal }) => {
 
           <FieldErrorStyled component="p" name="password" />
           <EyeBtnStyled type="button" onClick={handleClick}>
-            {showPassword ? <FiEye /> : <FiEyeOff />}
+            {showPassword ? <FiEyeOff /> : <FiEye />}
           </EyeBtnStyled>
           <StyledField
             type={showPassword ? "text" : "password"}
