@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   display: grid;
-  /* grid-template-columns: 1fr 568px; */
-  grid-template-columns: repeat(auto-fill, minmax(568px, 1fr));
+  grid-template-columns: 1fr 568px;
   gap: 24px;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1299px) {
     grid-template-columns: 1fr;
     justify-items: center;
+    align-items: center;
   }
 `;
 
@@ -16,6 +16,7 @@ export const HomeTextBlock = styled.div`
   padding: 98px 108px 98px 64px;
   border-radius: 30px;
   background-color: ${(props) => props.theme.colors.HomeTextBlkBGC};
+  max-width: 720px;
 `;
 
 export const TextBlockTitle = styled.h1`
@@ -57,7 +58,10 @@ export const TextBlockBtn = styled.button`
   }
 `;
 
-export const HomeImgBlock = styled.div``;
+export const HomeImgBlock = styled.div`
+  max-width: 568px;
+  height: auto;
+`;
 
 export const StatsBlock = styled.div`
   padding: 40px 0;
