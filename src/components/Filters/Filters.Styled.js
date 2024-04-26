@@ -21,6 +21,12 @@ export const SelectPriceWrapper = styled.div`
   width: 128px;
 `;
 
+export const SelectLevelsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 148px;
+`;
+
 export const SelectLabel = styled.label`
   font-weight: 500;
   font-size: 14px;

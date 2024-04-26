@@ -11,6 +11,7 @@ import { db } from "../../firebase";
 import { Filters } from "../../components/Filters/Filters";
 import { useSelector } from "react-redux";
 import {
+  selectFilterLevel,
   selectFilterPrice,
   selectFilterWord,
 } from "../../redux/filters/filtersSelectors";
@@ -27,6 +28,7 @@ const Teachers = () => {
   const [count, setCount] = useState(4);
   const filterWord = useSelector(selectFilterWord);
   const filterPrice = useSelector(selectFilterPrice);
+  const filterLevel = useSelector(selectFilterLevel);
   const teachersPerPage = 4;
 
   useEffect(() => {
@@ -60,7 +62,12 @@ const Teachers = () => {
     const priceMatch = filterPrice
       ? teacher.price_per_hour === parseFloat(filterPrice)
       : true;
-    return languageMatch && priceMatch;
+
+    const levelMatch = filterLevel
+      ? teacher.levels.some((level) => level.includes(filterLevel))
+      : true;
+
+    return languageMatch && priceMatch && levelMatch;
   });
 
   // const filteredTeachers = visibleTeachers.filter((teacher) =>

@@ -6,14 +6,17 @@ import {
   FiltersWrapper,
   ResetButton,
   SelectLabel,
+  SelectLevelsWrapper,
   SelectPriceWrapper,
   SelectWrapper,
 } from "./Filters.Styled";
 import {
+  selectFilterLevel,
   selectFilterPrice,
   selectFilterWord,
 } from "../../redux/filters/filtersSelectors";
 import {
+  setFilterLevel,
   setFilterPrice,
   setFilterWord,
 } from "../../redux/filters/filtersSlice";
@@ -27,6 +30,15 @@ const options = [
   { value: "italian", label: "Italian" },
   { value: "korean", label: "Korean" },
   { value: "vietnamese", label: " Vietnamese" },
+];
+
+const optionsLevels = [
+  { value: "A1 Beginner", label: "A1 Beginner" },
+  { value: "A2 Elementary", label: "A2 Elementary" },
+  { value: "B1 Intermediate", label: "B1 Intermediate" },
+  { value: "B2 Upper-Intermediate", label: "B2 Upper-Intermediate" },
+  { value: "C1 Advanced", label: "C1 Advanced" },
+  { value: "C2 Proficient", label: "C2 Proficient" },
 ];
 
 const customStyles = {
@@ -83,8 +95,10 @@ const customStyles = {
 export const Filters = ({ teachers }) => {
   const filterWord = useSelector(selectFilterWord);
   const filterPrice = useSelector(selectFilterPrice);
+  const filterLevel = useSelector(selectFilterLevel);
   const [selectedOption, setSelectedOption] = useState(filterWord);
   const [selectedPrice, setSelectedPrice] = useState(filterPrice);
+  const [selectedLevel, setSelectedLevel] = useState(filterLevel);
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const priceOptions = teachers
@@ -98,6 +112,7 @@ export const Filters = ({ teachers }) => {
   useEffect(() => {
     const language = searchParams.get("language");
     const price = searchParams.get("price");
+    const level = searchParams.get("level");
 
     if (language) {
       const selectedLanguage = options.find(
@@ -114,9 +129,21 @@ export const Filters = ({ teachers }) => {
       setSelectedPrice(selectedPriceOption);
       dispatch(setFilterPrice(selectedPriceOption?.value || ""));
     }
+
+    if (level) {
+      const selectedLevelOption = optionsLevels.find(
+        (option) => option.value === level,
+      );
+      setSelectedLevel(selectedLevelOption);
+      dispatch(setFilterLevel(selectedLevelOption?.value || ""));
+    }
   }, [searchParams, dispatch]);
 
-  const updateSearchParams = (selectedLanguage, selectedPrice) => {
+  const updateSearchParams = (
+    selectedLanguage,
+    selectedPrice,
+    selectedLevel,
+  ) => {
     const params = new URLSearchParams();
 
     if (selectedLanguage) {
@@ -124,6 +151,9 @@ export const Filters = ({ teachers }) => {
     }
     if (selectedPrice) {
       params.set("price", selectedPrice);
+    }
+    if (selectedLevel) {
+      params.set("level", selectedLevel);
     }
 
     setSearchParams(params);
@@ -133,21 +163,42 @@ export const Filters = ({ teachers }) => {
     setSelectedOption(selectedOption);
     setSearchParams({ languages: selectedOption?.value || "" });
     dispatch(setFilterWord(selectedOption?.value || ""));
-    updateSearchParams(selectedOption?.value, selectedPrice?.value);
+    updateSearchParams(
+      selectedOption?.value,
+      selectedPrice?.value,
+      selectedLevel?.value,
+    );
   };
 
   const onPriceChange = (selectedPrice) => {
     setSelectedPrice(selectedPrice);
     setSearchParams({ price: selectedPrice?.value || "" });
     dispatch(setFilterPrice(selectedPrice?.value || ""));
-    updateSearchParams(selectedOption?.value, selectedPrice?.value);
+    updateSearchParams(
+      selectedOption?.value,
+      selectedPrice?.value,
+      selectedLevel?.value,
+    );
+  };
+
+  const onLevelChange = (selectedLevel) => {
+    setSelectedLevel(selectedLevel);
+    setSearchParams({ level: selectedLevel?.value || "" });
+    dispatch(setFilterLevel(selectedLevel?.value || ""));
+    updateSearchParams(
+      selectedOption?.value,
+      selectedPrice?.value,
+      selectedLevel?.value,
+    );
   };
 
   const onReset = () => {
     setSelectedOption("");
     setSelectedPrice("");
+    setSelectedLevel("");
     dispatch(setFilterWord(""));
     dispatch(setFilterPrice(""));
+    dispatch(setFilterLevel(""));
     setSearchParams({});
   };
 
@@ -179,6 +230,20 @@ export const Filters = ({ teachers }) => {
             onChange={onPriceChange}
           ></Select>
         </SelectPriceWrapper>
+
+        <SelectLevelsWrapper>
+          <SelectLabel>Students level</SelectLabel>
+          <Select
+            placeholder="Level"
+            name="levelFilter"
+            id="level-filter"
+            styles={customStyles}
+            options={optionsLevels}
+            value={selectedLevel}
+            onChange={onLevelChange}
+          ></Select>
+        </SelectLevelsWrapper>
+
         <ResetButton type="button" onClick={onReset}>
           Reset
         </ResetButton>
